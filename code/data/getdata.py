@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 def get_request(url):
     CLIENT_ID = "bf095f8cb3a46df427e555beb47b1259"
@@ -14,8 +15,20 @@ def get_request(url):
     return anime
 
 def popular_anime_json(limit):
-    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=' + str(limit)
-    return get_request(url)
+    top_list = []
+    i = 0
+    while(limit - 500 > 0):
+        limit -= 500
+        url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=500&offset=' + str(i * 500)
+        top_list.append(get_request(url))
+        i += 1
+    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=' + str(limit) + '&offset=' + str(i * 500)
+    top_list.append(get_request(url))
+    
+    for i in range(1, len(top_list)):
+        for anime in top_list[1]["data"]:
+            top_list[0]["data"].append(anime)
+    return top_list[0]
 
 def anime_list(a_json):
     data = a_json["data"] 
@@ -24,15 +37,25 @@ def anime_list(a_json):
         anime = anime["node"]
         anime_id = anime["id"]
         url = 'https://api.myanimelist.net/v2/anime/' + str(anime_id) + '?fields=title,genres,start_season,mean,rank,popularity'
-        anime_list.append(get_request(url))
+        request = get_request(url)
+        anime_list.append(request)
+        pop = request["popularity"]
+        if (pop % 750 == 0 and len(data) - pop > 50):
+            print("Reuqested Anime %d / %d, got rate limited" % (pop, len(data)))
+            for count in range(5, 0, -1):
+                print("Continuing in " + str(count) + "...")
+                time.sleep(60)
+            print("Continuing")
     return anime_list
 
 def gen_json(anime_list):
     season_list = {}
     genre_json = {}
     banned_genres = ["Award Winning"]
-    i = 0
     for anime in anime_list:
+        if("start_season" not in anime):
+            print("Not start season " + str(anime["popularity"]))
+            continue
         # Get the season for this anime
         season = anime["start_season"]["season"].title() + " " + str(anime["start_season"]["year"])
         if season not in season_list:
@@ -68,17 +91,20 @@ def gen_json(anime_list):
                 genre_json[genre] = []
             genre_json[genre].append(entry)
         season_entry["anime"].append(entry)
-        i += 1
-        if (i % 500 == 0):
-            print("Processed " + str(i) + "th anime")
+        pop = entry["popularity"]
+        if (pop % 500 == 0):
+            print("Processed Anime %d / %d into json" % (pop, len(anime_list)))
 
     return json.dumps(season_list, indent=4), json.dumps(genre_json, indent=4)
 
 if __name__ == "__main__":
-    popular_anime = popular_anime_json(5000)
+    popular_anime = popular_anime_json(800)
     print("Got most popular anime")
     # The popular_anime object just contains the anime ids, we need to get all of the anime metadata
+    print("Requesting anime metadata...")
     anime = anime_list(popular_anime)
+    print("Got all requests from MAL")
+    print("Processing data for json...")
     seasons, genres = gen_json(anime)
     with open("anime_seasons.json", "w") as outfile:
         outfile.write(seasons)
