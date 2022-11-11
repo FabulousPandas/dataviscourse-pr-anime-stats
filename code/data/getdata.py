@@ -1,10 +1,8 @@
 import requests
 import json
 
-CLIENT_ID = "bf095f8cb3a46df427e555beb47b1259"
-CLIENT_SECRET = "06bce3e7e9711441b96a65a30b6bccf0bc9831fbb5e1c8948a8ea648eca79d8f"
-
 def get_request(url):
+    CLIENT_ID = "bf095f8cb3a46df427e555beb47b1259"
     response = requests.get(url, headers = {
         'X-MAL-CLIENT-ID': CLIENT_ID
         })
@@ -15,8 +13,8 @@ def get_request(url):
 
     return anime
 
-def popular_anime_json():
-    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=50'
+def popular_anime_json(limit):
+    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=' + limit
     return get_request(url)
 
 def anime_list(a_json):
@@ -34,6 +32,7 @@ def gen_json(anime_list):
     genre_json = {}
     banned_genres = ["Award Winning"]
     for anime in anime_list:
+        # Get the season for this anime
         season = anime["start_season"]["season"].title() + " " + str(anime["start_season"]["year"])
         if season not in season_list:
             season_entry = {}
@@ -44,10 +43,12 @@ def gen_json(anime_list):
         season_entry = season_list[season]
         season_entry["season"] = season
         genre_list = []
+        # Makes a list of all of the genres this anime has
         for genre in anime["genres"]:
             genre = genre["name"]
             if genre not in banned_genres:
                 genre_list.append(genre)
+        # Creates the anime object and fills it with metadata
         entry = {}
         entry["title"] = anime["title"]
         entry["season"] = season
@@ -56,6 +57,7 @@ def gen_json(anime_list):
         entry["rank"] = anime["rank"]
         entry["popularity"] = anime["popularity"]
         genre_count = season_entry["genre_counts"]
+        # Final touches for season and genre JSON objects
         for genre in genre_list:
             if genre in genre_count:
                 genre_count[genre] += 1
@@ -68,8 +70,9 @@ def gen_json(anime_list):
     return json.dumps(season_list, indent=4), json.dumps(genre_json, indent=4)
 
 if __name__ == "__main__":
-    popular_anime = popular_anime_json()
+    popular_anime = popular_anime_json(5000)
     print("Got most popular anime")
+    # The popular_anime object just contains the anime ids, we need to get all of the anime metadata
     anime = anime_list(popular_anime)
     seasons, genres = gen_json(anime)
     with open("anime_seasons.json", "w") as outfile:
