@@ -1,0 +1,24 @@
+{
+    "Shounen": [
+            {
+                "title": "Anime 1",
+                "rating": 8.42,
+                "rank": 100,
+                "popularity": 2000
+            },
+            {
+                "title": "Anime 2",
+                "rating": 6.42,
+                "rank": 977,
+                "popularity": 80
+            }
+        ],
+    "Romance": [
+        {
+                "title": "Anime 3",
+                "rating": 7.88,
+                "rank": 254,
+                "popularity": 52
+        }
+    ]
+}
