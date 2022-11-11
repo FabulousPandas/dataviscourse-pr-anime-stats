@@ -14,7 +14,7 @@ def get_request(url):
     return anime
 
 def popular_anime_json(limit):
-    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=' + limit
+    url = 'https://api.myanimelist.net/v2/anime/ranking?ranking_type=bypopularity&limit=' + str(limit)
     return get_request(url)
 
 def anime_list(a_json):
