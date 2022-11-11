@@ -31,6 +31,7 @@ def gen_json(anime_list):
     season_list = {}
     genre_json = {}
     banned_genres = ["Award Winning"]
+    i = 0
     for anime in anime_list:
         # Get the season for this anime
         season = anime["start_season"]["season"].title() + " " + str(anime["start_season"]["year"])
@@ -67,6 +68,10 @@ def gen_json(anime_list):
                 genre_json[genre] = []
             genre_json[genre].append(entry)
         season_entry["anime"].append(entry)
+        i += 1
+        if (i % 500 == 0):
+            print("Processed " + str(i) + "th anime")
+
     return json.dumps(season_list, indent=4), json.dumps(genre_json, indent=4)
 
 if __name__ == "__main__":
