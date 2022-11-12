@@ -1,8 +1,8 @@
 // Data Loading
 async function loadData() {
-    const seasonData = await d3.json('data/small_anime_seasons.json')
+    const seasonData = await d3.json('data/anime_seasons.json')
     // const genreData = await d3.json('data/small_anime_genres.json')
-    const genreData = await d3.json('data/array_small_anime_genres.json')
+    const genreData = await d3.json('data/anime_genres.json')
     return [seasonData, genreData]
 }
 
@@ -19,9 +19,36 @@ const globalApplicationState =  {
 // Application Mounting
 loadData().then((loadedData => { 
     const [seasonData, genreData] = loadedData
-    globalApplicationState.seasonData = seasonData
+    globalApplicationState.seasonData = new Map(seasonData)
     globalApplicationState.genreData = new Map(genreData)
 
-    lineChart = new LineChart(globalApplicationState)
-    
+    let lineChart = new LineChart(globalApplicationState)
+    let barGraph = new BarGraph(globalApplicationState)
+
+    d3.select("#filters")
+        .selectAll("input")
+        .data(globalApplicationState.genres)
+        .enter()
+        .append("label")
+            .text((d) => d)
+        .append("input")
+            .attr("type", "checkbox")
+            .attr("id", (d) => d = d.replace(/\s/g, ''))
+            .classed("unchecked", true)
+            .on("click", (d, genre) => {
+                genre = genre.replace(/\s/g, '')
+                const index = globalApplicationState.selectedGenres.indexOf(genre);
+                if (index > -1) {
+                    globalApplicationState.selectedGenres.splice(index, 1)
+                    d3.select("#" + genre).classed("unchecked", true)
+                } else {
+                    globalApplicationState.selectedGenres.push(genre)
+                    d3.select("#" + genre).classed("unchecked", false)
+                }
+                if(globalApplicationState.selectedGenres.length >= 10)
+                    d3.selectAll(".unchecked").property("disabled", true);
+                else
+                    d3.selectAll(".unchecked").property("disabled", false);
+            lineChart.update()
+            })
 }))

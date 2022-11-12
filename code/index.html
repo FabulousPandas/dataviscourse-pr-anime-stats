@@ -12,6 +12,7 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
     <script src="js/project.js"></script>
     <script src="js/line.js"></script>
+    <script src="js/bars.js"></script>
 </head>
 
 <body>
@@ -22,13 +23,15 @@
     </div>
 
     <div id="content">
-        <div id="filters"></div>
+        <div id="filters" style="display: flex; flex-flow: row wrap; gap: 10px"></div>
         <div>
             <svg id="line-chart">
                 <g id="x-axis"></g>
                 <g id="y-axis"></g>
                 <g id="legend"></g>
                 <g id="lines"></g>
+            </svg>
+            <svg id="bar-graph">
             </svg>
         </div>
     </div>
