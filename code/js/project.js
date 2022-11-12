@@ -1,7 +1,8 @@
 // Data Loading
 async function loadData() {
     const seasonData = await d3.json('data/small_anime_seasons.json')
-    const genreData = await d3.json('data/small_anime_genres.json')
+    // const genreData = await d3.json('data/small_anime_genres.json')
+    const genreData = await d3.json('data/array_small_anime_genres.json')
     return [seasonData, genreData]
 }
 
@@ -19,7 +20,7 @@ const globalApplicationState =  {
 loadData().then((loadedData => { 
     const [seasonData, genreData] = loadedData
     globalApplicationState.seasonData = seasonData
-    globalApplicationState.genreData = genreData
+    globalApplicationState.genreData = new Map(genreData)
 
     lineChart = new LineChart(globalApplicationState)
     
