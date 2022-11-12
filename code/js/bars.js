@@ -3,15 +3,9 @@ class BarGraph {
     constructor(globalState) {
         this.globalState = globalState;
         this.genreData = globalState.genreData;
+        this.genreList = globalState.selectedGenres;
         this.visWidth = 500;
         this.visHeight = 500;
-
-        this.genreList = [];
-        for (let genre of Object.keys(this.genreData)) {
-            if (!globalState.genres.includes(genre)) {
-                delete this.genreData[genre];
-            }
-        }
 
         d3.select("#bar-graph").attr("width", this.visWidth).attr("height", this.visHeight)
         
@@ -19,7 +13,7 @@ class BarGraph {
     }
 
     draw() {
-        console.log(this.genreData)
+        console.log(this.genreList)
         this.scaleX = d3.scaleBand()
             .domain(this.genreList)
             .range([0, 500])

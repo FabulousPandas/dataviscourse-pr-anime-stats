@@ -23,4 +23,30 @@ loadData().then((loadedData => {
 
     lineChart = new LineChart(globalApplicationState)
     barGraph = new BarGraph(globalApplicationState)
+
+    d3.select("#filters")
+        .selectAll("input")
+        .data(globalApplicationState.genres)
+        .enter()
+        .append("label")
+            .text((d) => d)
+        .append("input")
+            .attr("type", "checkbox")
+            .attr("id", (d) => d = d.replace(/\s/g, ''))
+            .classed("unchecked", true)
+            .on("click", (d, genre) => {
+                genre = genre.replace(/\s/g, '')
+                const index = globalApplicationState.selectedGenres.indexOf(genre);
+                if (index > -1) {
+                    globalApplicationState.selectedGenres.splice(index, 1)
+                    d3.select("#" + genre).classed("unchecked", true)
+                } else {
+                    globalApplicationState.selectedGenres.push(genre)
+                    d3.select("#" + genre).classed("unchecked", false)
+                }
+                if(globalApplicationState.selectedGenres.length >= 10)
+                    d3.selectAll(".unchecked").property("disabled", true);
+                else
+                    d3.selectAll(".unchecked").property("disabled", false);
+            })
 }))
