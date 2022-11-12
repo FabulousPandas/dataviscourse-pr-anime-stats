@@ -1,0 +1,37 @@
+CS 5630 - Project Peer Feedback
+Our team: Dylan Hansen, Ervin Chhour, Khris Thammavong
+Other Team: Brendan Le, James Scholz, and Gabriel Jarrard
+
+After analyzing the feedback given by James and Brendan (Gabriel was not here), 
+our team talked together and realized that some of our visualizations should be 
+thought out more. For example, our visualization for a bar graph that would turn 
+into a scatter plot after clicking a bar was confusing to them and we would have 
+to better explain it or design it if we want to use that in our final visuals. 
+Based on Brendan’s feedback, we decided that it would be a good idea to have one 
+nteractive area for all our graphs. They also brought to our attention that there 
+might be limitations on downloading our dataset, so we had to make sure that we 
+would be able to download a large amount of data from our sources. Overall, one 
+of the most important things that we’re going to address after their feedback is 
+how our visualizations will be created along with the layout of our visuals and 
+to make sure that it is easy to understand at a glance. We think we will be able 
+to do this by having one interactive area at the top of our page that will control 
+all the graphs, followed by the graphs themselves below it. 
+
+We thought that the quality of the feedback that we received from the other team was 
+very good. Their comments on our proposal were fair and nothing was harsh for the 
+sake of being harsh. We found their comments to be helpful for rethinking our visuals 
+and layout along with how we should think about collecting and using our data.
+
+Notes on Comments:
+Possible API rate limitation - Brendan
+Dynamically or Download dataset - Brendan
+How to deal with updates to dataset - Brendan
+Data structure for dataset - James
+Relative density between different seasons - James
+Scope of the project, start with shows, maybe move on to movies etc - James
+Search function for genres maybe, different categories to separate genres.  - Brendan
+One interactive area for all the graphs - Brendan
+Project plan needs to be talked about more, overall structure, timeline, work split up - James
+Bar charts design layout needs to be thought out. Use color or not. - James
+Animation for sorting can help track what you’re looking at - Brendan
+

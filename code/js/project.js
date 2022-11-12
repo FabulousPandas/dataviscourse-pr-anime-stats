@@ -1,7 +1,8 @@
 // Data Loading
 async function loadData() {
-    const seasonData = await d3.json('data/small_anime_seasons.json')
-    const genreData = await d3.json('data/small_anime_genres.json')
+    const seasonData = await d3.json('data/anime_seasons.json')
+    // const genreData = await d3.json('data/small_anime_genres.json')
+    const genreData = await d3.json('data/anime_genres.json')
     return [seasonData, genreData]
 }
 
@@ -18,11 +19,11 @@ const globalApplicationState =  {
 // Application Mounting
 loadData().then((loadedData => { 
     const [seasonData, genreData] = loadedData
-    globalApplicationState.seasonData = seasonData
-    globalApplicationState.genreData = genreData
+    globalApplicationState.seasonData = new Map(seasonData)
+    globalApplicationState.genreData = new Map(genreData)
 
-    //lineChart = new LineChart(globalApplicationState)
-    barGraph = new BarGraph(globalApplicationState)
+    let lineChart = new LineChart(globalApplicationState)
+    let barGraph = new BarGraph(globalApplicationState)
 
     d3.select("#filters")
         .selectAll("input")
@@ -49,6 +50,7 @@ loadData().then((loadedData => {
                     d3.selectAll(".unchecked").property("disabled", true);
                 else
                     d3.selectAll(".unchecked").property("disabled", false);
+                lineChart.update()
                 barGraph.draw()
             })
 }))
