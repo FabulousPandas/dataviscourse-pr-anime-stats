@@ -1,9 +1,17 @@
-[
-    {
+{
+    "Fall 2022": {
         "season": "Fall 2022",
         "genre_counts": [
             {
                 "genre": "Shounen",
+                "count": 1
+            },
+            {
+                "genre": "Supernatural",
+                "count": 2
+            },
+            {
+                "genre": "School",
                 "count": 1
             }
         ],
@@ -11,17 +19,19 @@
             {
                 "title": "Anime 1",
                 "season": "Fall 2022",
-                "genre": ["Shounen", "Supernatural"],
+                "genres": ["Shounen", "Supernatural"],
                 "rating": 8.42,
                 "rank": 100,
                 "popularity": 2000
             },
             {
                 "title": "Anime 2",
+                "season": "Fall 2022",
+                "genres": ["Supernatural", "School"],
                 "rating": 6.42,
                 "rank": 977,
                 "popularity": 80
             }
         ]
     }
-]
+}
