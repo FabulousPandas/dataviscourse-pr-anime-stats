@@ -22,5 +22,5 @@ loadData().then((loadedData => {
     globalApplicationState.genreData = genreData
 
     lineChart = LineChart(globalApplicationState)
-    
+    barGraph = BarGraph(globalApplicationState) 
 }))
