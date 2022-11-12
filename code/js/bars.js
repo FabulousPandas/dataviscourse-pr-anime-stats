@@ -18,7 +18,7 @@ class BarGraph {
             .domain(this.genreList)
             .range([0, 500])
         this.scaleY = d3.scaleLinear()
-            .domain([0, d3.max(this.genreData, (d) => len(d.anime))])
+            .domain([0, d3.max(this.genreData, (d) => d[1].length)])
             .range([500, 0])
         this.drawAxes()
     }
