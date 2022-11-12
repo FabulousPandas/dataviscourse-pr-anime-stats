@@ -40,7 +40,7 @@ def anime_list(a_json):
         request = get_request(url)
         anime_list.append(request)
         pop = request["popularity"]
-        if (pop % 750 == 0 and len(data) - pop > 50):
+        if (pop % 700 == 0 and len(data) - pop > 50):
             print("Requested Anime %d / %d, got rate limited" % (pop, len(data)))
             for count in range(5, 0, -1):
                 print("Continuing in " + str(count) + "...")
@@ -93,7 +93,6 @@ def gen_dict(anime_list):
             if (pop % 500 == 0):
                 print("Processed Anime %d / %d into json" % (pop, len(anime_list)))
         except KeyError:
-            print("ERROR GETTING INFO FOR " + str(anime))
             continue
 
     return season_list, genre_json
@@ -117,7 +116,7 @@ def format_genres(genre_dict):
     return genres
 
 if __name__ == "__main__":
-    popular_anime = popular_anime_json(800)
+    popular_anime = popular_anime_json(2000)
     print("Got most popular anime")
     # The popular_anime object just contains the anime ids, we need to get all of the anime metadata
     print("Requesting anime metadata...")
@@ -127,9 +126,9 @@ if __name__ == "__main__":
     seasons, genres = gen_dict(anime)
     seasons = format_seasons(seasons)
     genres = format_genres(genres)
-    with open("medium_anime_seasons.json", "w") as outfile:
+    with open("anime_seasons.json", "w") as outfile:
         outfile.write(json.dumps(seasons, indent=4, ensure_ascii=False))
     print("Generated Season JSON!")
-    with open("medium_anime_genres.json", "w") as outfile:
+    with open("anime_genres.json", "w") as outfile:
         outfile.write(json.dumps(genres, indent=4, ensure_ascii=False))
     print("Generated genre JSON!")

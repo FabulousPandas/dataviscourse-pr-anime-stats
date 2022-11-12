@@ -2,10 +2,10 @@ class BarGraph {
     
     constructor(globalState) {
         this.globalState = globalState;
-        this.genreData = globalState.genreData;
-        this.genreList = globalState.selectedGenres;
-        this.visWidth = 500;
-        this.visHeight = 500;
+        this.visWidth = 1000;
+        this.visHeight = 310;
+        this.marginX = 50;
+        this.marginY = 20;
 
         d3.select("#bar-graph").attr("width", this.visWidth).attr("height", this.visHeight)
         
@@ -13,18 +13,40 @@ class BarGraph {
     }
 
     draw() {
+        this.genreList = this.globalState.selectedGenres;
+        this.genreData = []
+        for (let genre of this.globalState.genreData) {
+            if (this.genreList.includes(genre[0])) {
+                this.genreData.push(genre)
+            }
+        }
         console.log(this.genreList)
         this.scaleX = d3.scaleBand()
             .domain(this.genreList)
-            .range([0, 500])
+            .range([this.marginX, this.visWidth - this.marginX])
         this.scaleY = d3.scaleLinear()
             .domain([0, d3.max(this.genreData, (d) => d[1].length)])
-            .range([500, 0])
+            .range([this.visHeight, 0])
         this.drawAxes()
+        this.drawBars()
     }
 
     drawAxes() {
-        let xAxis = d3.axisBottom(this.scaleX)
-        d3.select("#bar-graph").append("g").attr("id", "axes")
+        let xAxis = d3.axisBottom(this.scaleX);
+        let yAxis = d3.axisLeft(this.scaleY);
+        d3.select("#bar-x-axis").call(xAxis).attr("transform", "translate(0, " + (this.visHeight - this.marginY) + ")");
+        d3.select("#bar-y-axis").call(yAxis).attr("transform", "translate(" + this.marginX + ", " + -this.marginY + ")");
+    }
+
+    drawBars() {
+        d3.select("#bars").selectAll("rect").remove()
+        d3.select("#bars")
+            .selectAll("rect")
+            .data(this.genreData)
+            .join("rect")
+                .attr("x", (d) => this.scaleX(d[0]) + this.marginX)
+                .attr("y", (d) => this.scaleY(d[1].length))
+                .attr("width", 50)
+                .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginY)
     }
 }
