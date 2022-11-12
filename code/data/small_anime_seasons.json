@@ -1,1174 +1,1276 @@
-{
-    "Spring 2013": {
-        "season": "Spring 2013",
-        "genre_counts": {
-            "Action": 1,
-            "Drama": 1,
-            "Gore": 1,
-            "Military": 1,
-            "Shounen": 1,
-            "Survival": 1,
-            "Suspense": 1
-        },
-        "anime": [
-            {
-                "title": "Shingeki no Kyojin",
-                "season": "Spring 2013",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Gore",
-                    "Military",
-                    "Shounen",
-                    "Survival",
-                    "Suspense"
-                ],
-                "rating": 8.53,
-                "rank": 106,
-                "popularity": 1
-            }
-        ]
-    },
-    "Fall 2006": {
-        "season": "Fall 2006",
-        "genre_counts": {
-            "Psychological": 1,
-            "Shounen": 1,
-            "Supernatural": 1,
-            "Suspense": 1,
-            "Action": 1,
-            "Drama": 1,
-            "Mecha": 1,
-            "Military": 1,
-            "School": 1,
-            "Sci-Fi": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Death Note",
-                "season": "Fall 2006",
-                "genres": [
-                    "Psychological",
-                    "Shounen",
-                    "Supernatural",
-                    "Suspense"
-                ],
-                "rating": 8.62,
-                "rank": 77,
-                "popularity": 2
+[
+    [
+        "Spring 2013",
+        {
+            "season": "Spring 2013",
+            "genre_counts": {
+                "Action": 1,
+                "Drama": 1,
+                "Gore": 1,
+                "Military": 1,
+                "Shounen": 1,
+                "Survival": 1,
+                "Suspense": 1
             },
-            {
-                "title": "Code Geass: Hangyaku no Lelouch",
-                "season": "Fall 2006",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Mecha",
-                    "Military",
-                    "School",
-                    "Sci-Fi",
-                    "Super Power"
-                ],
-                "rating": 8.7,
-                "rank": 50,
-                "popularity": 19
-            }
-        ]
-    },
-    "Spring 2009": {
-        "season": "Spring 2009",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Drama": 1,
-            "Fantasy": 1,
-            "Military": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Fullmetal Alchemist: Brotherhood",
-                "season": "Spring 2009",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Drama",
-                    "Fantasy",
-                    "Military",
-                    "Shounen"
-                ],
-                "rating": 9.12,
-                "rank": 1,
-                "popularity": 3
-            }
-        ]
-    },
-    "Fall 2015": {
-        "season": "Fall 2015",
-        "genre_counts": {
-            "Action": 1,
-            "Adult Cast": 1,
-            "Comedy": 1,
-            "Parody": 1,
-            "Seinen": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "One Punch Man",
-                "season": "Fall 2015",
-                "genres": [
-                    "Action",
-                    "Adult Cast",
-                    "Comedy",
-                    "Parody",
-                    "Seinen",
-                    "Super Power"
-                ],
-                "rating": 8.51,
-                "rank": 119,
-                "popularity": 4
-            }
-        ]
-    },
-    "Summer 2012": {
-        "season": "Summer 2012",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Love Polygon": 1,
-            "Romance": 1,
-            "Video Game": 1
-        },
-        "anime": [
-            {
-                "title": "Sword Art Online",
-                "season": "Summer 2012",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Love Polygon",
-                    "Romance",
-                    "Video Game"
-                ],
-                "rating": 7.2,
-                "rank": 3035,
-                "popularity": 5
-            }
-        ]
-    },
-    "Spring 2016": {
-        "season": "Spring 2016",
-        "genre_counts": {
-            "Action": 1,
-            "School": 1,
-            "Shounen": 1,
-            "Super Power": 1,
-            "Drama": 1,
-            "Fantasy": 1,
-            "Isekai": 1,
-            "Psychological": 1,
-            "Suspense": 1,
-            "Time Travel": 1
-        },
-        "anime": [
-            {
-                "title": "Boku no Hero Academia",
-                "season": "Spring 2016",
-                "genres": [
-                    "Action",
-                    "School",
-                    "Shounen",
-                    "Super Power"
-                ],
-                "rating": 7.91,
-                "rank": 707,
-                "popularity": 6
+            "anime": [
+                {
+                    "title": "Shingeki no Kyojin",
+                    "season": "Spring 2013",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Gore",
+                        "Military",
+                        "Shounen",
+                        "Survival",
+                        "Suspense"
+                    ],
+                    "rating": 8.53,
+                    "rank": 107,
+                    "popularity": 1
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2006",
+        {
+            "season": "Fall 2006",
+            "genre_counts": {
+                "Psychological": 1,
+                "Shounen": 1,
+                "Supernatural": 1,
+                "Suspense": 1,
+                "Action": 1,
+                "Drama": 1,
+                "Mecha": 1,
+                "Military": 1,
+                "School": 1,
+                "Sci-Fi": 1,
+                "Super Power": 1
             },
-            {
-                "title": "Re:Zero kara Hajimeru Isekai Seikatsu",
-                "season": "Spring 2016",
-                "genres": [
-                    "Drama",
-                    "Fantasy",
-                    "Isekai",
-                    "Psychological",
-                    "Suspense",
-                    "Time Travel"
-                ],
-                "rating": 8.24,
-                "rank": 298,
-                "popularity": 25
-            }
-        ]
-    },
-    "Spring 2019": {
-        "season": "Spring 2019",
-        "genre_counts": {
-            "Action": 2,
-            "Fantasy": 1,
-            "Historical": 1,
-            "Shounen": 2,
-            "Drama": 1,
-            "Gore": 1,
-            "Military": 1,
-            "Survival": 1
-        },
-        "anime": [
-            {
-                "title": "Kimetsu no Yaiba",
-                "season": "Spring 2019",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Historical",
-                    "Shounen"
-                ],
-                "rating": 8.53,
-                "rank": 110,
-                "popularity": 7
+            "anime": [
+                {
+                    "title": "Death Note",
+                    "season": "Fall 2006",
+                    "genres": [
+                        "Psychological",
+                        "Shounen",
+                        "Supernatural",
+                        "Suspense"
+                    ],
+                    "rating": 8.62,
+                    "rank": 77,
+                    "popularity": 2
+                },
+                {
+                    "title": "Code Geass: Hangyaku no Lelouch",
+                    "season": "Fall 2006",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Mecha",
+                        "Military",
+                        "School",
+                        "Sci-Fi",
+                        "Super Power"
+                    ],
+                    "rating": 8.7,
+                    "rank": 50,
+                    "popularity": 19
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2009",
+        {
+            "season": "Spring 2009",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Drama": 1,
+                "Fantasy": 1,
+                "Military": 1,
+                "Shounen": 1
             },
-            {
-                "title": "Shingeki no Kyojin Season 3 Part 2",
-                "season": "Spring 2019",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Gore",
-                    "Military",
-                    "Shounen",
-                    "Survival"
-                ],
-                "rating": 9.06,
-                "rank": 6,
-                "popularity": 27
-            }
-        ]
-    },
-    "Fall 2002": {
-        "season": "Fall 2002",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Martial Arts": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Naruto",
-                "season": "Fall 2002",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Martial Arts",
-                    "Shounen"
-                ],
-                "rating": 7.98,
-                "rank": 608,
-                "popularity": 8
-            }
-        ]
-    },
-    "Summer 2014": {
-        "season": "Summer 2014",
-        "genre_counts": {
-            "Action": 3,
-            "Fantasy": 3,
-            "Gore": 2,
-            "Horror": 1,
-            "Psychological": 1,
-            "Seinen": 1,
-            "Shounen": 1,
-            "Super Power": 1,
-            "Adventure": 1,
-            "Love Polygon": 1,
-            "Romance": 1,
-            "Video Game": 1
-        },
-        "anime": [
-            {
-                "title": "Tokyo Ghoul",
-                "season": "Summer 2014",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Gore",
-                    "Horror",
-                    "Psychological",
-                    "Seinen"
-                ],
-                "rating": 7.79,
-                "rank": 929,
-                "popularity": 9
+            "anime": [
+                {
+                    "title": "Fullmetal Alchemist: Brotherhood",
+                    "season": "Spring 2009",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Drama",
+                        "Fantasy",
+                        "Military",
+                        "Shounen"
+                    ],
+                    "rating": 9.12,
+                    "rank": 1,
+                    "popularity": 3
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2015",
+        {
+            "season": "Fall 2015",
+            "genre_counts": {
+                "Action": 1,
+                "Adult Cast": 1,
+                "Comedy": 1,
+                "Parody": 1,
+                "Seinen": 1,
+                "Super Power": 1
             },
-            {
-                "title": "Akame ga Kill!",
-                "season": "Summer 2014",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Gore",
-                    "Shounen",
-                    "Super Power"
-                ],
-                "rating": 7.47,
-                "rank": 1789,
-                "popularity": 29
+            "anime": [
+                {
+                    "title": "One Punch Man",
+                    "season": "Fall 2015",
+                    "genres": [
+                        "Action",
+                        "Adult Cast",
+                        "Comedy",
+                        "Parody",
+                        "Seinen",
+                        "Super Power"
+                    ],
+                    "rating": 8.51,
+                    "rank": 119,
+                    "popularity": 4
+                }
+            ]
+        }
+    ],
+    [
+        "Summer 2012",
+        {
+            "season": "Summer 2012",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Love Polygon": 1,
+                "Romance": 1,
+                "Video Game": 1
             },
-            {
-                "title": "Sword Art Online II",
-                "season": "Summer 2014",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Love Polygon",
-                    "Romance",
-                    "Video Game"
-                ],
-                "rating": 6.7,
-                "rank": 5376,
-                "popularity": 33
-            }
-        ]
-    },
-    "Fall 2011": {
-        "season": "Fall 2011",
-        "genre_counts": {
-            "Action": 2,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Shounen": 2,
-            "Gore": 1,
-            "High Stakes Game": 1,
-            "Psychological": 1,
-            "Supernatural": 1,
-            "Survival": 1,
-            "Suspense": 1
-        },
-        "anime": [
-            {
-                "title": "Hunter x Hunter (2011)",
-                "season": "Fall 2011",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Shounen"
-                ],
-                "rating": 9.04,
-                "rank": 10,
-                "popularity": 10
+            "anime": [
+                {
+                    "title": "Sword Art Online",
+                    "season": "Summer 2012",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Love Polygon",
+                        "Romance",
+                        "Video Game"
+                    ],
+                    "rating": 7.2,
+                    "rank": 3036,
+                    "popularity": 5
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2016",
+        {
+            "season": "Spring 2016",
+            "genre_counts": {
+                "Action": 1,
+                "School": 1,
+                "Shounen": 1,
+                "Super Power": 1,
+                "Drama": 1,
+                "Fantasy": 1,
+                "Isekai": 1,
+                "Psychological": 1,
+                "Suspense": 1,
+                "Time Travel": 1
             },
-            {
-                "title": "Mirai Nikki (TV)",
-                "season": "Fall 2011",
-                "genres": [
-                    "Action",
-                    "Gore",
-                    "High Stakes Game",
-                    "Psychological",
-                    "Shounen",
-                    "Supernatural",
-                    "Survival",
-                    "Suspense"
-                ],
-                "rating": 7.44,
-                "rank": 1910,
-                "popularity": 32
-            }
-        ]
-    },
-    "Summer 2016": {
-        "season": "Summer 2016",
-        "genre_counts": {
-            "Drama": 2,
-            "Romantic Subtext": 2,
-            "Supernatural": 2,
-            "Shounen": 1,
-            "Action": 1,
-            "Comedy": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Kimi no Na wa.",
-                "season": "Summer 2016",
-                "genres": [
-                    "Drama",
-                    "Romantic Subtext",
-                    "Supernatural"
-                ],
-                "rating": 8.86,
-                "rank": 24,
-                "popularity": 11
+            "anime": [
+                {
+                    "title": "Boku no Hero Academia",
+                    "season": "Spring 2016",
+                    "genres": [
+                        "Action",
+                        "School",
+                        "Shounen",
+                        "Super Power"
+                    ],
+                    "rating": 7.91,
+                    "rank": 707,
+                    "popularity": 6
+                },
+                {
+                    "title": "Re:Zero kara Hajimeru Isekai Seikatsu",
+                    "season": "Spring 2016",
+                    "genres": [
+                        "Drama",
+                        "Fantasy",
+                        "Isekai",
+                        "Psychological",
+                        "Suspense",
+                        "Time Travel"
+                    ],
+                    "rating": 8.24,
+                    "rank": 294,
+                    "popularity": 25
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2019",
+        {
+            "season": "Spring 2019",
+            "genre_counts": {
+                "Action": 2,
+                "Fantasy": 1,
+                "Historical": 1,
+                "Shounen": 2,
+                "Drama": 1,
+                "Gore": 1,
+                "Military": 1,
+                "Survival": 1
             },
-            {
-                "title": "Koe no Katachi",
-                "season": "Summer 2016",
-                "genres": [
-                    "Drama",
-                    "Romantic Subtext",
-                    "Shounen"
-                ],
-                "rating": 8.95,
-                "rank": 15,
-                "popularity": 18
+            "anime": [
+                {
+                    "title": "Kimetsu no Yaiba",
+                    "season": "Spring 2019",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Historical",
+                        "Shounen"
+                    ],
+                    "rating": 8.53,
+                    "rank": 110,
+                    "popularity": 7
+                },
+                {
+                    "title": "Shingeki no Kyojin Season 3 Part 2",
+                    "season": "Spring 2019",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Gore",
+                        "Military",
+                        "Shounen",
+                        "Survival"
+                    ],
+                    "rating": 9.06,
+                    "rank": 6,
+                    "popularity": 27
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2002",
+        {
+            "season": "Fall 2002",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Martial Arts": 1,
+                "Shounen": 1
             },
-            {
-                "title": "Mob Psycho 100",
-                "season": "Summer 2016",
-                "genres": [
-                    "Action",
-                    "Comedy",
-                    "Super Power",
-                    "Supernatural"
-                ],
-                "rating": 8.49,
-                "rank": 129,
-                "popularity": 34
-            }
-        ]
-    },
-    "Spring 2017": {
-        "season": "Spring 2017",
-        "genre_counts": {
-            "Action": 2,
-            "Drama": 1,
-            "Gore": 1,
-            "Military": 1,
-            "Shounen": 2,
-            "Survival": 1,
-            "Suspense": 1,
-            "School": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Shingeki no Kyojin Season 2",
-                "season": "Spring 2017",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Gore",
-                    "Military",
-                    "Shounen",
-                    "Survival",
-                    "Suspense"
-                ],
-                "rating": 8.5,
-                "rank": 121,
-                "popularity": 12
+            "anime": [
+                {
+                    "title": "Naruto",
+                    "season": "Fall 2002",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Martial Arts",
+                        "Shounen"
+                    ],
+                    "rating": 7.98,
+                    "rank": 608,
+                    "popularity": 8
+                }
+            ]
+        }
+    ],
+    [
+        "Summer 2014",
+        {
+            "season": "Summer 2014",
+            "genre_counts": {
+                "Action": 3,
+                "Fantasy": 3,
+                "Gore": 2,
+                "Horror": 1,
+                "Psychological": 1,
+                "Seinen": 1,
+                "Shounen": 1,
+                "Super Power": 1,
+                "Adventure": 1,
+                "Love Polygon": 1,
+                "Romance": 1,
+                "Video Game": 1
             },
-            {
-                "title": "Boku no Hero Academia 2nd Season",
-                "season": "Spring 2017",
-                "genres": [
-                    "Action",
-                    "School",
-                    "Shounen",
-                    "Super Power"
-                ],
-                "rating": 8.14,
-                "rank": 406,
-                "popularity": 14
-            }
-        ]
-    },
-    "Spring 2011": {
-        "season": "Spring 2011",
-        "genre_counts": {
-            "Drama": 1,
-            "Psychological": 1,
-            "Sci-Fi": 1,
-            "Suspense": 1,
-            "Time Travel": 1,
-            "Action": 1,
-            "Fantasy": 1,
-            "Mythology": 1,
-            "School": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Steins;Gate",
-                "season": "Spring 2011",
-                "genres": [
-                    "Drama",
-                    "Psychological",
-                    "Sci-Fi",
-                    "Suspense",
-                    "Time Travel"
-                ],
-                "rating": 9.08,
-                "rank": 5,
-                "popularity": 13
+            "anime": [
+                {
+                    "title": "Tokyo Ghoul",
+                    "season": "Summer 2014",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Gore",
+                        "Horror",
+                        "Psychological",
+                        "Seinen"
+                    ],
+                    "rating": 7.79,
+                    "rank": 929,
+                    "popularity": 9
+                },
+                {
+                    "title": "Akame ga Kill!",
+                    "season": "Summer 2014",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Gore",
+                        "Shounen",
+                        "Super Power"
+                    ],
+                    "rating": 7.47,
+                    "rank": 1785,
+                    "popularity": 29
+                },
+                {
+                    "title": "Sword Art Online II",
+                    "season": "Summer 2014",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Love Polygon",
+                        "Romance",
+                        "Video Game"
+                    ],
+                    "rating": 6.7,
+                    "rank": 5382,
+                    "popularity": 33
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2011",
+        {
+            "season": "Fall 2011",
+            "genre_counts": {
+                "Action": 2,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Shounen": 2,
+                "Gore": 1,
+                "High Stakes Game": 1,
+                "Psychological": 1,
+                "Supernatural": 1,
+                "Survival": 1,
+                "Suspense": 1
             },
-            {
-                "title": "Ao no Exorcist",
-                "season": "Spring 2011",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Mythology",
-                    "School",
-                    "Shounen"
-                ],
-                "rating": 7.51,
-                "rank": 1672,
-                "popularity": 36
-            }
-        ]
-    },
-    "Spring 2014": {
-        "season": "Spring 2014",
-        "genre_counts": {
-            "Comedy": 1,
-            "Ecchi": 1,
-            "Fantasy": 1,
-            "Isekai": 1,
-            "Strategy Game": 1,
-            "School": 1,
-            "Shounen": 1,
-            "Sports": 1,
-            "Team Sports": 1
-        },
-        "anime": [
-            {
-                "title": "No Game No Life",
-                "season": "Spring 2014",
-                "genres": [
-                    "Comedy",
-                    "Ecchi",
-                    "Fantasy",
-                    "Isekai",
-                    "Strategy Game"
-                ],
-                "rating": 8.1,
-                "rank": 448,
-                "popularity": 15
+            "anime": [
+                {
+                    "title": "Hunter x Hunter (2011)",
+                    "season": "Fall 2011",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Shounen"
+                    ],
+                    "rating": 9.04,
+                    "rank": 10,
+                    "popularity": 10
+                },
+                {
+                    "title": "Mirai Nikki (TV)",
+                    "season": "Fall 2011",
+                    "genres": [
+                        "Action",
+                        "Gore",
+                        "High Stakes Game",
+                        "Psychological",
+                        "Shounen",
+                        "Supernatural",
+                        "Survival",
+                        "Suspense"
+                    ],
+                    "rating": 7.44,
+                    "rank": 1911,
+                    "popularity": 32
+                }
+            ]
+        }
+    ],
+    [
+        "Summer 2016",
+        {
+            "season": "Summer 2016",
+            "genre_counts": {
+                "Drama": 2,
+                "Romantic Subtext": 2,
+                "Supernatural": 2,
+                "Shounen": 1,
+                "Action": 1,
+                "Comedy": 1,
+                "Super Power": 1
             },
-            {
-                "title": "Haikyuu!!",
-                "season": "Spring 2014",
-                "genres": [
-                    "School",
-                    "Shounen",
-                    "Sports",
-                    "Team Sports"
-                ],
-                "rating": 8.45,
-                "rank": 143,
-                "popularity": 37
-            }
-        ]
-    },
-    "Winter 2007": {
-        "season": "Winter 2007",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Martial Arts": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Naruto: Shippuuden",
-                "season": "Winter 2007",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Martial Arts",
-                    "Shounen"
-                ],
-                "rating": 8.25,
-                "rank": 282,
-                "popularity": 16
-            }
-        ]
-    },
-    "Summer 2018": {
-        "season": "Summer 2018",
-        "genre_counts": {
-            "Action": 1,
-            "Drama": 1,
-            "Gore": 1,
-            "Military": 1,
-            "Shounen": 1,
-            "Survival": 1
-        },
-        "anime": [
-            {
-                "title": "Shingeki no Kyojin Season 3",
-                "season": "Summer 2018",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Gore",
-                    "Military",
-                    "Shounen",
-                    "Survival"
-                ],
-                "rating": 8.62,
-                "rank": 76,
-                "popularity": 17
-            }
-        ]
-    },
-    "Fall 2008": {
-        "season": "Fall 2008",
-        "genre_counts": {
-            "Drama": 1,
-            "Love Polygon": 1,
-            "Romance": 1,
-            "School": 1
-        },
-        "anime": [
-            {
-                "title": "Toradora!",
-                "season": "Fall 2008",
-                "genres": [
-                    "Drama",
-                    "Love Polygon",
-                    "Romance",
-                    "School"
-                ],
-                "rating": 8.1,
-                "rank": 453,
-                "popularity": 20
-            }
-        ]
-    },
-    "Fall 2020": {
-        "season": "Fall 2020",
-        "genre_counts": {
-            "Action": 1,
-            "Fantasy": 1,
-            "School": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Jujutsu Kaisen",
-                "season": "Fall 2020",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "School",
-                    "Shounen"
-                ],
-                "rating": 8.66,
-                "rank": 65,
-                "popularity": 21
-            }
-        ]
-    },
-    "Fall 2014": {
-        "season": "Fall 2014",
-        "genre_counts": {
-            "Drama": 1,
-            "Music": 1,
-            "Romance": 1,
-            "School": 1,
-            "Shounen": 2,
-            "Action": 2,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Gore": 1,
-            "Horror": 1,
-            "Psychological": 1,
-            "Sci-Fi": 1,
-            "Seinen": 1
-        },
-        "anime": [
-            {
-                "title": "Shigatsu wa Kimi no Uso",
-                "season": "Fall 2014",
-                "genres": [
-                    "Drama",
-                    "Music",
-                    "Romance",
-                    "School",
-                    "Shounen"
-                ],
-                "rating": 8.66,
-                "rank": 62,
-                "popularity": 22
+            "anime": [
+                {
+                    "title": "Kimi no Na wa.",
+                    "season": "Summer 2016",
+                    "genres": [
+                        "Drama",
+                        "Romantic Subtext",
+                        "Supernatural"
+                    ],
+                    "rating": 8.86,
+                    "rank": 24,
+                    "popularity": 11
+                },
+                {
+                    "title": "Koe no Katachi",
+                    "season": "Summer 2016",
+                    "genres": [
+                        "Drama",
+                        "Romantic Subtext",
+                        "Shounen"
+                    ],
+                    "rating": 8.95,
+                    "rank": 15,
+                    "popularity": 18
+                },
+                {
+                    "title": "Mob Psycho 100",
+                    "season": "Summer 2016",
+                    "genres": [
+                        "Action",
+                        "Comedy",
+                        "Super Power",
+                        "Supernatural"
+                    ],
+                    "rating": 8.49,
+                    "rank": 129,
+                    "popularity": 34
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2017",
+        {
+            "season": "Spring 2017",
+            "genre_counts": {
+                "Action": 2,
+                "Drama": 1,
+                "Gore": 1,
+                "Military": 1,
+                "Shounen": 2,
+                "Survival": 1,
+                "Suspense": 1,
+                "School": 1,
+                "Super Power": 1
             },
-            {
-                "title": "Nanatsu no Taizai",
-                "season": "Fall 2014",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Shounen"
-                ],
-                "rating": 7.69,
-                "rank": 1152,
-                "popularity": 31
+            "anime": [
+                {
+                    "title": "Shingeki no Kyojin Season 2",
+                    "season": "Spring 2017",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Gore",
+                        "Military",
+                        "Shounen",
+                        "Survival",
+                        "Suspense"
+                    ],
+                    "rating": 8.5,
+                    "rank": 121,
+                    "popularity": 12
+                },
+                {
+                    "title": "Boku no Hero Academia 2nd Season",
+                    "season": "Spring 2017",
+                    "genres": [
+                        "Action",
+                        "School",
+                        "Shounen",
+                        "Super Power"
+                    ],
+                    "rating": 8.14,
+                    "rank": 403,
+                    "popularity": 14
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2011",
+        {
+            "season": "Spring 2011",
+            "genre_counts": {
+                "Drama": 1,
+                "Psychological": 1,
+                "Sci-Fi": 1,
+                "Suspense": 1,
+                "Time Travel": 1,
+                "Action": 1,
+                "Fantasy": 1,
+                "Mythology": 1,
+                "School": 1,
+                "Shounen": 1
             },
-            {
-                "title": "Kiseijuu: Sei no Kakuritsu",
-                "season": "Fall 2014",
-                "genres": [
-                    "Action",
-                    "Gore",
-                    "Horror",
-                    "Psychological",
-                    "Sci-Fi",
-                    "Seinen"
-                ],
-                "rating": 8.34,
-                "rank": 207,
-                "popularity": 42
-            }
-        ]
-    },
-    "Fall 1999": {
-        "season": "Fall 1999",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "One Piece",
-                "season": "Fall 1999",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Shounen"
-                ],
-                "rating": 8.67,
-                "rank": 59,
-                "popularity": 23
-            }
-        ]
-    },
-    "Winter 2014": {
-        "season": "Winter 2014",
-        "genre_counts": {
-            "Action": 1,
-            "Fantasy": 1,
-            "Mythology": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Noragami",
-                "season": "Winter 2014",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Mythology",
-                    "Shounen"
-                ],
-                "rating": 7.96,
-                "rank": 626,
-                "popularity": 24
-            }
-        ]
-    },
-    "Spring 2018": {
-        "season": "Spring 2018",
-        "genre_counts": {
-            "Action": 1,
-            "School": 1,
-            "Shounen": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Boku no Hero Academia 3rd Season",
-                "season": "Spring 2018",
-                "genres": [
-                    "Action",
-                    "School",
-                    "Shounen",
-                    "Super Power"
-                ],
-                "rating": 8.07,
-                "rank": 496,
-                "popularity": 26
-            }
-        ]
-    },
-    "Spring 2010": {
-        "season": "Spring 2010",
-        "genre_counts": {
-            "Drama": 1,
-            "School": 1,
-            "Supernatural": 1
-        },
-        "anime": [
-            {
-                "title": "Angel Beats!",
-                "season": "Spring 2010",
-                "genres": [
-                    "Drama",
-                    "School",
-                    "Supernatural"
-                ],
-                "rating": 8.07,
-                "rank": 495,
-                "popularity": 28
-            }
-        ]
-    },
-    "Winter 2016": {
-        "season": "Winter 2016",
-        "genre_counts": {
-            "Mystery": 1,
-            "Psychological": 1,
-            "Seinen": 1,
-            "Supernatural": 1,
-            "Time Travel": 1,
-            "Adventure": 1,
-            "Comedy": 1,
-            "Fantasy": 1,
-            "Isekai": 1,
-            "Parody": 1,
-            "Reincarnation": 1
-        },
-        "anime": [
-            {
-                "title": "Boku dake ga Inai Machi",
-                "season": "Winter 2016",
-                "genres": [
-                    "Mystery",
-                    "Psychological",
-                    "Seinen",
-                    "Supernatural",
-                    "Time Travel"
-                ],
-                "rating": 8.31,
-                "rank": 227,
-                "popularity": 30
+            "anime": [
+                {
+                    "title": "Steins;Gate",
+                    "season": "Spring 2011",
+                    "genres": [
+                        "Drama",
+                        "Psychological",
+                        "Sci-Fi",
+                        "Suspense",
+                        "Time Travel"
+                    ],
+                    "rating": 9.08,
+                    "rank": 5,
+                    "popularity": 13
+                },
+                {
+                    "title": "Ao no Exorcist",
+                    "season": "Spring 2011",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Mythology",
+                        "School",
+                        "Shounen"
+                    ],
+                    "rating": 7.51,
+                    "rank": 1672,
+                    "popularity": 36
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2014",
+        {
+            "season": "Spring 2014",
+            "genre_counts": {
+                "Comedy": 1,
+                "Ecchi": 1,
+                "Fantasy": 1,
+                "Isekai": 1,
+                "Strategy Game": 1,
+                "School": 1,
+                "Shounen": 1,
+                "Sports": 1,
+                "Team Sports": 1
             },
-            {
-                "title": "Kono Subarashii Sekai ni Shukufuku wo!",
-                "season": "Winter 2016",
-                "genres": [
-                    "Adventure",
-                    "Comedy",
-                    "Fantasy",
-                    "Isekai",
-                    "Parody",
-                    "Reincarnation"
-                ],
-                "rating": 8.12,
-                "rank": 420,
-                "popularity": 39
-            }
-        ]
-    },
-    "Winter 2015": {
-        "season": "Winter 2015",
-        "genre_counts": {
-            "Action": 2,
-            "Comedy": 1,
-            "School": 1,
-            "Shounen": 1,
-            "Fantasy": 1,
-            "Gore": 1,
-            "Horror": 1,
-            "Psychological": 2,
-            "Seinen": 1,
-            "Adult Cast": 1,
-            "Drama": 1,
-            "High Stakes Game": 1,
-            "Supernatural": 1,
-            "Suspense": 1
-        },
-        "anime": [
-            {
-                "title": "Ansatsu Kyoushitsu",
-                "season": "Winter 2015",
-                "genres": [
-                    "Action",
-                    "Comedy",
-                    "School",
-                    "Shounen"
-                ],
-                "rating": 8.09,
-                "rank": 469,
-                "popularity": 35
+            "anime": [
+                {
+                    "title": "No Game No Life",
+                    "season": "Spring 2014",
+                    "genres": [
+                        "Comedy",
+                        "Ecchi",
+                        "Fantasy",
+                        "Isekai",
+                        "Strategy Game"
+                    ],
+                    "rating": 8.1,
+                    "rank": 455,
+                    "popularity": 15
+                },
+                {
+                    "title": "Haikyuu!!",
+                    "season": "Spring 2014",
+                    "genres": [
+                        "School",
+                        "Shounen",
+                        "Sports",
+                        "Team Sports"
+                    ],
+                    "rating": 8.45,
+                    "rank": 143,
+                    "popularity": 37
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2007",
+        {
+            "season": "Winter 2007",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Martial Arts": 1,
+                "Shounen": 1
             },
-            {
-                "title": "Tokyo Ghoul \u221aA",
-                "season": "Winter 2015",
-                "genres": [
-                    "Action",
-                    "Fantasy",
-                    "Gore",
-                    "Horror",
-                    "Psychological",
-                    "Seinen"
-                ],
-                "rating": 7.03,
-                "rank": 3862,
-                "popularity": 45
+            "anime": [
+                {
+                    "title": "Naruto: Shippuuden",
+                    "season": "Winter 2007",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Martial Arts",
+                        "Shounen"
+                    ],
+                    "rating": 8.25,
+                    "rank": 288,
+                    "popularity": 16
+                }
+            ]
+        }
+    ],
+    [
+        "Summer 2018",
+        {
+            "season": "Summer 2018",
+            "genre_counts": {
+                "Action": 1,
+                "Drama": 1,
+                "Gore": 1,
+                "Military": 1,
+                "Shounen": 1,
+                "Survival": 1
             },
-            {
-                "title": "Death Parade",
-                "season": "Winter 2015",
-                "genres": [
-                    "Adult Cast",
-                    "Drama",
-                    "High Stakes Game",
-                    "Psychological",
-                    "Supernatural",
-                    "Suspense"
-                ],
-                "rating": 8.16,
-                "rank": 377,
-                "popularity": 49
-            }
-        ]
-    },
-    "Winter 2019": {
-        "season": "Winter 2019",
-        "genre_counts": {
-            "Mystery": 1,
-            "Psychological": 1,
-            "Sci-Fi": 1,
-            "Shounen": 1,
-            "Survival": 1,
-            "Suspense": 1
-        },
-        "anime": [
-            {
-                "title": "Yakusoku no Neverland",
-                "season": "Winter 2019",
-                "genres": [
-                    "Mystery",
-                    "Psychological",
-                    "Sci-Fi",
-                    "Shounen",
-                    "Survival",
-                    "Suspense"
-                ],
-                "rating": 8.53,
-                "rank": 111,
-                "popularity": 38
-            }
-        ]
-    },
-    "Fall 2004": {
-        "season": "Fall 2004",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Bleach",
-                "season": "Fall 2004",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Shounen"
-                ],
-                "rating": 7.89,
-                "rank": 734,
-                "popularity": 40
-            }
-        ]
-    },
-    "Winter 2021": {
-        "season": "Winter 2021",
-        "genre_counts": {
-            "Action": 1,
-            "Drama": 1,
-            "Gore": 1,
-            "Military": 1,
-            "Shounen": 1,
-            "Survival": 1
-        },
-        "anime": [
-            {
-                "title": "Shingeki no Kyojin: The Final Season",
-                "season": "Winter 2021",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Gore",
-                    "Military",
-                    "Shounen",
-                    "Survival"
-                ],
-                "rating": 8.82,
-                "rank": 28,
-                "popularity": 41
-            }
-        ]
-    },
-    "Spring 1998": {
-        "season": "Spring 1998",
-        "genre_counts": {
-            "Action": 1,
-            "Adult Cast": 1,
-            "Sci-Fi": 1,
-            "Space": 1
-        },
-        "anime": [
-            {
-                "title": "Cowboy Bebop",
-                "season": "Spring 1998",
-                "genres": [
-                    "Action",
-                    "Adult Cast",
-                    "Sci-Fi",
-                    "Space"
-                ],
-                "rating": 8.75,
-                "rank": 38,
-                "popularity": 43
-            }
-        ]
-    },
-    "Summer 2001": {
-        "season": "Summer 2001",
-        "genre_counts": {
-            "Adventure": 1,
-            "Mythology": 1,
-            "Supernatural": 1
-        },
-        "anime": [
-            {
-                "title": "Sen to Chihiro no Kamikakushi",
-                "season": "Summer 2001",
-                "genres": [
-                    "Adventure",
-                    "Mythology",
-                    "Supernatural"
-                ],
-                "rating": 8.78,
-                "rank": 34,
-                "popularity": 44
-            }
-        ]
-    },
-    "Fall 1995": {
-        "season": "Fall 1995",
-        "genre_counts": {
-            "Action": 1,
-            "Avant Garde": 1,
-            "Drama": 1,
-            "Mecha": 1,
-            "Psychological": 1,
-            "Sci-Fi": 1,
-            "Suspense": 1
-        },
-        "anime": [
-            {
-                "title": "Neon Genesis Evangelion",
-                "season": "Fall 1995",
-                "genres": [
-                    "Action",
-                    "Avant Garde",
-                    "Drama",
-                    "Mecha",
-                    "Psychological",
-                    "Sci-Fi",
-                    "Suspense"
-                ],
-                "rating": 8.34,
-                "rank": 201,
-                "popularity": 46
-            }
-        ]
-    },
-    "Spring 2008": {
-        "season": "Spring 2008",
-        "genre_counts": {
-            "Action": 1,
-            "Drama": 1,
-            "Mecha": 1,
-            "Military": 1,
-            "Sci-Fi": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Code Geass: Hangyaku no Lelouch R2",
-                "season": "Spring 2008",
-                "genres": [
-                    "Action",
-                    "Drama",
-                    "Mecha",
-                    "Military",
-                    "Sci-Fi",
-                    "Super Power"
-                ],
-                "rating": 8.91,
-                "rank": 20,
-                "popularity": 47
-            }
-        ]
-    },
-    "Fall 2009": {
-        "season": "Fall 2009",
-        "genre_counts": {
-            "Action": 1,
-            "Adventure": 1,
-            "Fantasy": 1,
-            "Shounen": 1
-        },
-        "anime": [
-            {
-                "title": "Fairy Tail",
-                "season": "Fall 2009",
-                "genres": [
-                    "Action",
-                    "Adventure",
-                    "Fantasy",
-                    "Shounen"
-                ],
-                "rating": 7.58,
-                "rank": 1430,
-                "popularity": 48
-            }
-        ]
-    },
-    "Fall 2013": {
-        "season": "Fall 2013",
-        "genre_counts": {
-            "Action": 1,
-            "Comedy": 1,
-            "Ecchi": 1,
-            "School": 1,
-            "Super Power": 1
-        },
-        "anime": [
-            {
-                "title": "Kill la Kill",
-                "season": "Fall 2013",
-                "genres": [
-                    "Action",
-                    "Comedy",
-                    "Ecchi",
-                    "School",
-                    "Super Power"
-                ],
-                "rating": 8.04,
-                "rank": 527,
-                "popularity": 50
-            }
-        ]
-    }
-}
+            "anime": [
+                {
+                    "title": "Shingeki no Kyojin Season 3",
+                    "season": "Summer 2018",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Gore",
+                        "Military",
+                        "Shounen",
+                        "Survival"
+                    ],
+                    "rating": 8.62,
+                    "rank": 76,
+                    "popularity": 17
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2008",
+        {
+            "season": "Fall 2008",
+            "genre_counts": {
+                "Drama": 1,
+                "Love Polygon": 1,
+                "Romance": 1,
+                "School": 1
+            },
+            "anime": [
+                {
+                    "title": "Toradora!",
+                    "season": "Fall 2008",
+                    "genres": [
+                        "Drama",
+                        "Love Polygon",
+                        "Romance",
+                        "School"
+                    ],
+                    "rating": 8.1,
+                    "rank": 460,
+                    "popularity": 20
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2020",
+        {
+            "season": "Fall 2020",
+            "genre_counts": {
+                "Action": 1,
+                "Fantasy": 1,
+                "School": 1,
+                "Shounen": 1
+            },
+            "anime": [
+                {
+                    "title": "Jujutsu Kaisen",
+                    "season": "Fall 2020",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "School",
+                        "Shounen"
+                    ],
+                    "rating": 8.66,
+                    "rank": 66,
+                    "popularity": 21
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2014",
+        {
+            "season": "Fall 2014",
+            "genre_counts": {
+                "Drama": 1,
+                "Music": 1,
+                "Romance": 1,
+                "School": 1,
+                "Shounen": 2,
+                "Action": 2,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Gore": 1,
+                "Horror": 1,
+                "Psychological": 1,
+                "Sci-Fi": 1,
+                "Seinen": 1
+            },
+            "anime": [
+                {
+                    "title": "Shigatsu wa Kimi no Uso",
+                    "season": "Fall 2014",
+                    "genres": [
+                        "Drama",
+                        "Music",
+                        "Romance",
+                        "School",
+                        "Shounen"
+                    ],
+                    "rating": 8.66,
+                    "rank": 63,
+                    "popularity": 22
+                },
+                {
+                    "title": "Nanatsu no Taizai",
+                    "season": "Fall 2014",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Shounen"
+                    ],
+                    "rating": 7.69,
+                    "rank": 1153,
+                    "popularity": 31
+                },
+                {
+                    "title": "Kiseijuu: Sei no Kakuritsu",
+                    "season": "Fall 2014",
+                    "genres": [
+                        "Action",
+                        "Gore",
+                        "Horror",
+                        "Psychological",
+                        "Sci-Fi",
+                        "Seinen"
+                    ],
+                    "rating": 8.34,
+                    "rank": 204,
+                    "popularity": 42
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 1999",
+        {
+            "season": "Fall 1999",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Shounen": 1
+            },
+            "anime": [
+                {
+                    "title": "One Piece",
+                    "season": "Fall 1999",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Shounen"
+                    ],
+                    "rating": 8.67,
+                    "rank": 58,
+                    "popularity": 23
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2014",
+        {
+            "season": "Winter 2014",
+            "genre_counts": {
+                "Action": 1,
+                "Fantasy": 1,
+                "Mythology": 1,
+                "Shounen": 1
+            },
+            "anime": [
+                {
+                    "title": "Noragami",
+                    "season": "Winter 2014",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Mythology",
+                        "Shounen"
+                    ],
+                    "rating": 7.96,
+                    "rank": 626,
+                    "popularity": 24
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2018",
+        {
+            "season": "Spring 2018",
+            "genre_counts": {
+                "Action": 1,
+                "School": 1,
+                "Shounen": 1,
+                "Super Power": 1
+            },
+            "anime": [
+                {
+                    "title": "Boku no Hero Academia 3rd Season",
+                    "season": "Spring 2018",
+                    "genres": [
+                        "Action",
+                        "School",
+                        "Shounen",
+                        "Super Power"
+                    ],
+                    "rating": 8.07,
+                    "rank": 486,
+                    "popularity": 26
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2010",
+        {
+            "season": "Spring 2010",
+            "genre_counts": {
+                "Drama": 1,
+                "School": 1,
+                "Supernatural": 1
+            },
+            "anime": [
+                {
+                    "title": "Angel Beats!",
+                    "season": "Spring 2010",
+                    "genres": [
+                        "Drama",
+                        "School",
+                        "Supernatural"
+                    ],
+                    "rating": 8.07,
+                    "rank": 485,
+                    "popularity": 28
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2016",
+        {
+            "season": "Winter 2016",
+            "genre_counts": {
+                "Mystery": 1,
+                "Psychological": 1,
+                "Seinen": 1,
+                "Supernatural": 1,
+                "Time Travel": 1,
+                "Adventure": 1,
+                "Comedy": 1,
+                "Fantasy": 1,
+                "Isekai": 1,
+                "Parody": 1,
+                "Reincarnation": 1
+            },
+            "anime": [
+                {
+                    "title": "Boku dake ga Inai Machi",
+                    "season": "Winter 2016",
+                    "genres": [
+                        "Mystery",
+                        "Psychological",
+                        "Seinen",
+                        "Supernatural",
+                        "Time Travel"
+                    ],
+                    "rating": 8.31,
+                    "rank": 230,
+                    "popularity": 30
+                },
+                {
+                    "title": "Kono Subarashii Sekai ni Shukufuku wo!",
+                    "season": "Winter 2016",
+                    "genres": [
+                        "Adventure",
+                        "Comedy",
+                        "Fantasy",
+                        "Isekai",
+                        "Parody",
+                        "Reincarnation"
+                    ],
+                    "rating": 8.12,
+                    "rank": 433,
+                    "popularity": 39
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2015",
+        {
+            "season": "Winter 2015",
+            "genre_counts": {
+                "Action": 2,
+                "Comedy": 1,
+                "School": 1,
+                "Shounen": 1,
+                "Fantasy": 1,
+                "Gore": 1,
+                "Horror": 1,
+                "Psychological": 2,
+                "Seinen": 1,
+                "Adult Cast": 1,
+                "Drama": 1,
+                "High Stakes Game": 1,
+                "Supernatural": 1,
+                "Suspense": 1
+            },
+            "anime": [
+                {
+                    "title": "Ansatsu Kyoushitsu",
+                    "season": "Winter 2015",
+                    "genres": [
+                        "Action",
+                        "Comedy",
+                        "School",
+                        "Shounen"
+                    ],
+                    "rating": 8.09,
+                    "rank": 468,
+                    "popularity": 35
+                },
+                {
+                    "title": "Tokyo Ghoul √A",
+                    "season": "Winter 2015",
+                    "genres": [
+                        "Action",
+                        "Fantasy",
+                        "Gore",
+                        "Horror",
+                        "Psychological",
+                        "Seinen"
+                    ],
+                    "rating": 7.03,
+                    "rank": 3864,
+                    "popularity": 45
+                },
+                {
+                    "title": "Death Parade",
+                    "season": "Winter 2015",
+                    "genres": [
+                        "Adult Cast",
+                        "Drama",
+                        "High Stakes Game",
+                        "Psychological",
+                        "Supernatural",
+                        "Suspense"
+                    ],
+                    "rating": 8.16,
+                    "rank": 383,
+                    "popularity": 49
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2019",
+        {
+            "season": "Winter 2019",
+            "genre_counts": {
+                "Mystery": 1,
+                "Psychological": 1,
+                "Sci-Fi": 1,
+                "Shounen": 1,
+                "Survival": 1,
+                "Suspense": 1
+            },
+            "anime": [
+                {
+                    "title": "Yakusoku no Neverland",
+                    "season": "Winter 2019",
+                    "genres": [
+                        "Mystery",
+                        "Psychological",
+                        "Sci-Fi",
+                        "Shounen",
+                        "Survival",
+                        "Suspense"
+                    ],
+                    "rating": 8.53,
+                    "rank": 111,
+                    "popularity": 38
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2004",
+        {
+            "season": "Fall 2004",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Shounen": 1
+            },
+            "anime": [
+                {
+                    "title": "Bleach",
+                    "season": "Fall 2004",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Shounen"
+                    ],
+                    "rating": 7.89,
+                    "rank": 734,
+                    "popularity": 40
+                }
+            ]
+        }
+    ],
+    [
+        "Winter 2021",
+        {
+            "season": "Winter 2021",
+            "genre_counts": {
+                "Action": 1,
+                "Drama": 1,
+                "Gore": 1,
+                "Military": 1,
+                "Shounen": 1,
+                "Survival": 1
+            },
+            "anime": [
+                {
+                    "title": "Shingeki no Kyojin: The Final Season",
+                    "season": "Winter 2021",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Gore",
+                        "Military",
+                        "Shounen",
+                        "Survival"
+                    ],
+                    "rating": 8.82,
+                    "rank": 28,
+                    "popularity": 41
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 1998",
+        {
+            "season": "Spring 1998",
+            "genre_counts": {
+                "Action": 1,
+                "Adult Cast": 1,
+                "Sci-Fi": 1,
+                "Space": 1
+            },
+            "anime": [
+                {
+                    "title": "Cowboy Bebop",
+                    "season": "Spring 1998",
+                    "genres": [
+                        "Action",
+                        "Adult Cast",
+                        "Sci-Fi",
+                        "Space"
+                    ],
+                    "rating": 8.75,
+                    "rank": 38,
+                    "popularity": 43
+                }
+            ]
+        }
+    ],
+    [
+        "Summer 2001",
+        {
+            "season": "Summer 2001",
+            "genre_counts": {
+                "Adventure": 1,
+                "Mythology": 1,
+                "Supernatural": 1
+            },
+            "anime": [
+                {
+                    "title": "Sen to Chihiro no Kamikakushi",
+                    "season": "Summer 2001",
+                    "genres": [
+                        "Adventure",
+                        "Mythology",
+                        "Supernatural"
+                    ],
+                    "rating": 8.78,
+                    "rank": 34,
+                    "popularity": 44
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 1995",
+        {
+            "season": "Fall 1995",
+            "genre_counts": {
+                "Action": 1,
+                "Avant Garde": 1,
+                "Drama": 1,
+                "Mecha": 1,
+                "Psychological": 1,
+                "Sci-Fi": 1,
+                "Suspense": 1
+            },
+            "anime": [
+                {
+                    "title": "Neon Genesis Evangelion",
+                    "season": "Fall 1995",
+                    "genres": [
+                        "Action",
+                        "Avant Garde",
+                        "Drama",
+                        "Mecha",
+                        "Psychological",
+                        "Sci-Fi",
+                        "Suspense"
+                    ],
+                    "rating": 8.34,
+                    "rank": 206,
+                    "popularity": 46
+                }
+            ]
+        }
+    ],
+    [
+        "Spring 2008",
+        {
+            "season": "Spring 2008",
+            "genre_counts": {
+                "Action": 1,
+                "Drama": 1,
+                "Mecha": 1,
+                "Military": 1,
+                "Sci-Fi": 1,
+                "Super Power": 1
+            },
+            "anime": [
+                {
+                    "title": "Code Geass: Hangyaku no Lelouch R2",
+                    "season": "Spring 2008",
+                    "genres": [
+                        "Action",
+                        "Drama",
+                        "Mecha",
+                        "Military",
+                        "Sci-Fi",
+                        "Super Power"
+                    ],
+                    "rating": 8.91,
+                    "rank": 20,
+                    "popularity": 47
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2009",
+        {
+            "season": "Fall 2009",
+            "genre_counts": {
+                "Action": 1,
+                "Adventure": 1,
+                "Fantasy": 1,
+                "Shounen": 1
+            },
+            "anime": [
+                {
+                    "title": "Fairy Tail",
+                    "season": "Fall 2009",
+                    "genres": [
+                        "Action",
+                        "Adventure",
+                        "Fantasy",
+                        "Shounen"
+                    ],
+                    "rating": 7.58,
+                    "rank": 1422,
+                    "popularity": 48
+                }
+            ]
+        }
+    ],
+    [
+        "Fall 2013",
+        {
+            "season": "Fall 2013",
+            "genre_counts": {
+                "Action": 1,
+                "Comedy": 1,
+                "Ecchi": 1,
+                "School": 1,
+                "Super Power": 1
+            },
+            "anime": [
+                {
+                    "title": "Kill la Kill",
+                    "season": "Fall 2013",
+                    "genres": [
+                        "Action",
+                        "Comedy",
+                        "Ecchi",
+                        "School",
+                        "Super Power"
+                    ],
+                    "rating": 8.04,
+                    "rank": 527,
+                    "popularity": 50
+                }
+            ]
+        }
+    ]
+]
