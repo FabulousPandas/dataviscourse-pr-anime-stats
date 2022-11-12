@@ -21,6 +21,6 @@ loadData().then((loadedData => {
     globalApplicationState.seasonData = seasonData
     globalApplicationState.genreData = genreData
 
-    lineChart = LineChart(globalApplicationState)
+    lineChart = new LineChart(globalApplicationState)
     
 }))
