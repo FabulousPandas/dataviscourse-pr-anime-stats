@@ -20,7 +20,6 @@ class BarGraph {
                 this.genreData.push(genre)
             }
         }
-        console.log(this.genreList)
         this.scaleX = d3.scaleBand()
             .domain(this.genreList)
             .range([this.marginX, this.visWidth - this.marginX])

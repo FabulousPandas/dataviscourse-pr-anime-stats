@@ -1,7 +1,6 @@
 // Data Loading
 async function loadData() {
     const seasonData = await d3.json('data/anime_seasons.json')
-    // const genreData = await d3.json('data/small_anime_genres.json')
     const genreData = await d3.json('data/anime_genres.json')
     return [seasonData, genreData]
 }
