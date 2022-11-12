@@ -98,6 +98,15 @@ def gen_dict(anime_list):
 
     return season_list, genre_json
 
+def format_seasons(seasons_dict):
+    seasons = []
+    for season in seasons_dict:
+        season_arr = []
+        season_arr.append(season)
+        season_arr.append(seasons_dict[season])
+        seasons.append(season_arr)
+    return seasons
+
 def format_genres(genre_dict):
     genres = []
     for genre in genre_dict:
@@ -108,7 +117,7 @@ def format_genres(genre_dict):
     return genres
 
 if __name__ == "__main__":
-    popular_anime = popular_anime_json(50)
+    popular_anime = popular_anime_json(800)
     print("Got most popular anime")
     # The popular_anime object just contains the anime ids, we need to get all of the anime metadata
     print("Requesting anime metadata...")
@@ -116,10 +125,11 @@ if __name__ == "__main__":
     print("Got all requests from MAL")
     print("Processing data for json...")
     seasons, genres = gen_dict(anime)
+    seasons = format_seasons(seasons)
     genres = format_genres(genres)
-    with open("anime_seasons.json", "w") as outfile:
+    with open("medium_anime_seasons.json", "w") as outfile:
         outfile.write(json.dumps(seasons, indent=4, ensure_ascii=False))
     print("Generated Season JSON!")
-    with open("array_small_anime_genres.json", "w") as outfile:
+    with open("medium_anime_genres.json", "w") as outfile:
         outfile.write(json.dumps(genres, indent=4, ensure_ascii=False))
     print("Generated genre JSON!")
