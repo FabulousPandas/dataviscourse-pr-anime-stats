@@ -2,7 +2,7 @@ class LineChart {
     constructor(globalApplicationState) {
         this.globalApplicationState = globalApplicationState
 
-        this.visWidth = 7000
+        this.visWidth = 1000
         this.visHeight = 600
 
         this.margins = {left: 20, right: 20, top: 20, bottom: 50}
@@ -16,7 +16,12 @@ class LineChart {
             return d3.max(Object.values(data.genre_counts))
         })
 
-        this.scaleX = d3.scalePoint().domain(this.seasons).range([this.margins.left, this.visWidth - this.margins.right])
+        let minYear = this.seasons[0].split(" ")[1]
+        let maxYear = this.seasons[this.seasons.length - 1].split(" ")[1]
+        console.log(minYear, maxYear)
+
+        this.scaleX = d3.scaleTime().domain([new Date(minYear), new Date(maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
+        // this.scaleX = d3.scalePoint().domain(this.seasons).range([this.margins.left, this.visWidth - this.margins.right])
         this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
@@ -81,7 +86,7 @@ class LineChart {
     drawLines() {
         let lineSelection = this.svg.select("#lines")
         let lineGenerator = d3.line()
-            .x(d => { return this.scaleX(d[0]) })
+            .x(d => { return this.scaleX(new Date(d[0].split(" ")[1])) })
             .y(d => { return this.scaleY(d[1].length) })
 
         let genreGrouped = new Map()
@@ -94,6 +99,7 @@ class LineChart {
         })
 
         let filteredMap = new Map(filtered)
+        console.log(filteredMap)
 
         lineSelection.selectAll("path")
             .data(filteredMap)
