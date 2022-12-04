@@ -23,6 +23,7 @@ loadData().then((loadedData => {
 
     let lineChart = new LineChart(globalApplicationState)
     let barGraph = new BarGraph(globalApplicationState)
+    let bumpChart = new BumpChart(globalApplicationState)
 
     d3.select("#filters")
         .selectAll("input")
@@ -52,6 +53,7 @@ loadData().then((loadedData => {
                     d3.selectAll(".unchecked").property("disabled", false);
                 lineChart.update()
                 barGraph.draw()
+                bumpChart.update()
             })    
         .style("width", 25 + "px")  
 }))
