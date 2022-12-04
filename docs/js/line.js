@@ -2,21 +2,25 @@ class LineChart {
     constructor(globalApplicationState) {
         this.globalApplicationState = globalApplicationState
 
-        this.visWidth = 7000
+        this.visWidth = 1000
         this.visHeight = 600
 
         this.margins = {left: 20, right: 20, top: 20, bottom: 50}
 
         // this.globalApplicationState.selectedGenres = ["Action", "Adventure", "Romance", "Slice of Life"]
 
-        this.seasons = Array.from(this.globalApplicationState.seasonData.keys())
-        this.seasons.sort(this.sortSeason)
-        let yMax = d3.max(this.seasons, d => {
+        this.years = Array.from(this.globalApplicationState.seasonData.keys())
+        this.years.sort()
+        let yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
             return d3.max(Object.values(data.genre_counts))
         })
 
-        this.scaleX = d3.scalePoint().domain(this.seasons).range([this.margins.left, this.visWidth - this.margins.right])
+        let minYear = this.years[0]
+        let maxYear = "2022"
+
+        this.scaleX = d3.scaleTime().domain([new Date(minYear), new Date(maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
+        // this.scaleX = d3.scalePoint().domain(this.seasons).range([this.margins.left, this.visWidth - this.margins.right])
         this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
@@ -26,21 +30,21 @@ class LineChart {
         this.drawLines()
     }
 
-    sortSeason(a, b){ 
-        let seasonValue = {"Spring": 0, "Summer": 1, "Fall": 2, "Winter": 3}
-        let [a_season, a_year] = a.split(" ")
-        let [b_season, b_year] = b.split(" ")
-        if(a_year < b_year)
-            return -1
-        else if (a_year > b_year)
-            return 1
-        else {
-            if (seasonValue[a_season] < seasonValue[b_season])
-                return -1
-            else
-                return 1
-        }
-    }
+    // sortSeason(a, b){ 
+    //     let seasonValue = {"Spring": 0, "Summer": 1, "Fall": 2, "Winter": 3}
+    //     let [a_season, a_year] = a.split(" ")
+    //     let [b_season, b_year] = b.split(" ")
+    //     if(a_year < b_year)
+    //         return -1
+    //     else if (a_year > b_year)
+    //         return 1
+    //     else {
+    //         if (seasonValue[a_season] < seasonValue[b_season])
+    //             return -1
+    //         else
+    //             return 1
+    //     }
+    // }
 
     update() {
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
@@ -81,25 +85,27 @@ class LineChart {
     drawLines() {
         let lineSelection = this.svg.select("#lines")
         let lineGenerator = d3.line()
-            .x(d => { return this.scaleX(d[0]) })
+            .x(d => { return this.scaleX(new Date(d[0])) })
             .y(d => { return this.scaleY(d[1].length) })
 
         let genreGrouped = new Map()
-        this.globalApplicationState.genreData.forEach((value,key) => {genreGrouped.set(key, [...d3.group(value, d => d.season)])})
+        this.globalApplicationState.genreData.forEach((value,key) => {genreGrouped.set(key, [...d3.group(value, d => d.year)])})
+        console.log(genreGrouped)
         let filtered = ([...genreGrouped].filter(([k,v]) => this.globalApplicationState.selectedGenres.includes(k)))
         filtered.forEach(([k, v]) => {
             v.sort((a,b) => {
-                return this.sortSeason(a[0], b[0])
+                return new Date(a[0]) - new Date(b[0])
             })
         })
 
         let filteredMap = new Map(filtered)
+        console.log(filteredMap)
 
         lineSelection.selectAll("path")
             .data(filteredMap)
             .join("path")
             .attr("d", d => lineGenerator(d[1]))
-            .attr("transform", `translate(0, ${this.margins.top + this.margins.bottom})`)
+            .attr("transform", `translate(0, ${this.margins.bottom })`)
             .attr("fill", "none")
             .attr("stroke", d => this.colorScale(d[0]))
             .attr("stroke-width", 1)
