@@ -3,9 +3,10 @@ class BarGraph {
     constructor(globalState) {
         this.globalState = globalState;
         this.visWidth = 1000;
-        this.visHeight = 310;
+        this.visHeight = 400;
         this.marginX = 50;
-        this.marginY = 20;
+        this.marginTop = 10;
+        this.marginBottom = 10;
 
         d3.select("#bar-graph").attr("width", this.visWidth).attr("height", this.visHeight)
         
@@ -25,7 +26,7 @@ class BarGraph {
             .range([this.marginX, this.visWidth - this.marginX])
         this.scaleY = d3.scaleLinear()
             .domain([0, d3.max(this.genreData, (d) => d[1].length)])
-            .range([this.visHeight, 0])
+            .range([this.visHeight - this.marginTop - this.marginBottom, 0]).nice()
         this.colorScale = d3.scaleOrdinal().domain(this.globalState.selectedGenres).range(d3.schemeCategory10)
         this.drawAxes()
         this.drawBars()
@@ -34,8 +35,8 @@ class BarGraph {
     drawAxes() {
         let xAxis = d3.axisBottom(this.scaleX);
         let yAxis = d3.axisLeft(this.scaleY);
-        d3.select("#bar-x-axis").call(xAxis).attr("transform", "translate(0, " + (this.visHeight - this.marginY) + ")");
-        d3.select("#bar-y-axis").call(yAxis).attr("transform", "translate(" + this.marginX + ", " + -this.marginY + ")");
+        d3.select("#bar-x-axis").call(xAxis).attr("transform", "translate(0, " + (this.visHeight - this.marginTop - this.marginBottom) + ")");
+        d3.select("#bar-y-axis").call(yAxis).attr("transform", "translate(" + this.marginX + ", 0" + ")");
     }
 
     drawBars() {
@@ -47,7 +48,7 @@ class BarGraph {
                 .attr("x", (d) => this.scaleX(d[0]) + this.marginX)
                 .attr("y", (d) => this.scaleY(d[1].length))
                 .attr("width", this.scaleX.bandwidth() - 100)
-                .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginY)
+                .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginTop - this.marginBottom)
                 .attr("fill", (d) => this.colorScale(d[0]))
     }
 }
