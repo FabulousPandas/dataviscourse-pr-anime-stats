@@ -12,6 +12,10 @@ const globalApplicationState =  {
     genres: ["Action", "Adventure", "Avant Garde", "Boys Love", "Comedy", "Drama", 
              "Fantasy", "Girls Love", "Gourmet", "Horror", "Mystery", "Romance", 
              "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"],
+    themes: ["Adult Cast", "Anthropomorphic", "CGDCT", "Childcare", "Combat Sports",
+            "Crossdressing", "Delinquents", "Detective", "Educational", "Gag Humor",
+            "Gore", "Harem", "High Stakes Game", "Historical", "Idols (Female)",
+            "Idols (Male)", "Isekai"],
     selectedGenres: ["Action", "Comedy", "Drama", "Romance"],
 }
 
@@ -24,9 +28,18 @@ loadData().then((loadedData => {
     let lineChart = new LineChart(globalApplicationState)
     let barGraph = new BarGraph(globalApplicationState)
 
+    d3.select("#filters") .append("text").text("Genres:")
+    create_checkboxes(globalApplicationState.genres, lineChart, barGraph)
+
+    d3.select("#filters").append("text").text("Themes:")
+    create_checkboxes(globalApplicationState.themes, lineChart, barGraph)
+}))
+
+function create_checkboxes(data, lineChart, barGraph) {
     d3.select("#filters")
+        .append("g")
         .selectAll("input")
-        .data(globalApplicationState.genres)
+        .data(data)
         .enter()
         .append("label")
             .text((d) => d)
@@ -36,7 +49,7 @@ loadData().then((loadedData => {
             .property("checked", (d) => globalApplicationState.selectedGenres.includes(d))
             .classed("unchecked", (d) => !globalApplicationState.selectedGenres.includes(d))
             .on("click", (d, genre) => {
-                genre_id = genre.replace(/\s/g, '')
+                genre_id = genre.replace(/[^A-Za-z\d]/g, '')
                 const index = globalApplicationState.selectedGenres.indexOf(genre);
                 if (index > -1) {
                     globalApplicationState.selectedGenres.splice(index, 1)
@@ -52,4 +65,4 @@ loadData().then((loadedData => {
                 lineChart.update()
                 barGraph.draw()
             })
-}))
+}

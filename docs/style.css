@@ -1,9 +1,25 @@
 #filters {
     position: fixed; 
-    overflow-x: auto;
-    white-space: nowrap;
+    overflow-y: auto;
+    right: 0px;
     top: 0px;
-    width: 100%;
-    height: 30px;
+    height: 100%;
     background-color: grey;
+}
+
+#filters g {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+
+#filters text {
+    font-weight: bold;
+}
+
+#filters label {
+}
+
+#header-wrap {
+    margin-top: 10px;
 }
