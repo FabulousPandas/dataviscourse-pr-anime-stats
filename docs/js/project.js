@@ -15,7 +15,14 @@ const globalApplicationState =  {
     themes: ["Adult Cast", "Anthropomorphic", "CGDCT", "Childcare", "Combat Sports",
             "Crossdressing", "Delinquents", "Detective", "Educational", "Gag Humor",
             "Gore", "Harem", "High Stakes Game", "Historical", "Idols (Female)",
-            "Idols (Male)", "Isekai"],
+            "Idols (Male)", "Isekai", "Iyashikei", "Love Polygon", "Magical Sex Shift",
+            "Mahou Shoujo", "Martial Arts", "Mecha", "Medical", "Military", "Music",
+            "Mythology", "Organized Crime", "Otaku Culture", "Parody", "Performing Arts",
+            "Pets", "Psychological", "Racing", "Reincarnation", "Reverse Harem",
+            "Romantic Subtext", "Samurai", "School", "Showbiz", "Space", "Strategy Game",
+            "Super Power", "Survival", "Team Sports", "Time Travel", "Vampire", "Video Game",
+            "Visual Arts", "Workplace"],
+    demographics: ["Josei", "Kids", "Seinen", "Shoujo", "Shounen"],
     selectedGenres: ["Action", "Comedy", "Drama", "Romance"],
 }
 
@@ -33,17 +40,22 @@ loadData().then((loadedData => {
 
     d3.select("#filters").append("text").text("Themes:")
     create_checkboxes(globalApplicationState.themes, lineChart, barGraph)
+
+    d3.select("#filters") .append("text").text("Demographics:")
+    create_checkboxes(globalApplicationState.demographics, lineChart, barGraph)
 }))
 
 function create_checkboxes(data, lineChart, barGraph) {
-    d3.select("#filters")
+    let div = d3.select("#filters")
         .append("g")
         .selectAll("input")
         .data(data)
         .enter()
-        .append("label")
-            .text((d) => d)
-        .append("input")
+        .append("div");
+    let label = div.append("label");
+        label.classed("switch", true);
+        
+        label.append("input")
             .attr("type", "checkbox")
             .attr("id", (d) => d = d.replace(/\s/g, ''))
             .property("checked", (d) => globalApplicationState.selectedGenres.includes(d))
@@ -64,5 +76,8 @@ function create_checkboxes(data, lineChart, barGraph) {
                     d3.selectAll(".unchecked").property("disabled", false);
                 lineChart.update()
                 barGraph.draw()
-            })
+            });
+        label.append("span").classed("slider round", true)
+
+        div.append("label").classed("slider-label", true).text((d) => d);
 }
