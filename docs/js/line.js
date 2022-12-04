@@ -9,7 +9,7 @@ class LineChart {
 
         this.years = Array.from(this.globalApplicationState.seasonData.keys())
         this.years.sort()
-        let yMax = d3.max(this.years, d => {
+        this.yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
             let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
             return d3.max(filteredData, d => d[1])
@@ -20,7 +20,7 @@ class LineChart {
         this.maxYear = "2022"
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
-        this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
+        this.scaleY = d3.scaleLinear().domain([0, this.yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
@@ -43,12 +43,12 @@ class LineChart {
     }
     
     updateYScale() {
-        let yMax = d3.max(this.years, d => {
+        this.yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
             let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
             return d3.max(filteredData, d => d[1])
         })
-        this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
+        this.scaleY = d3.scaleLinear().domain([0, this.yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
     }
 
     updateFilteredData() {
@@ -102,7 +102,7 @@ class LineChart {
         let ySelection = this.svg.select("#y-axis")
         
         let xAxis = d3.axisBottom(this.scaleX)
-        let yAxis = d3.axisLeft(this.scaleY)
+        let yAxis = this.yMax <= 10 ? d3.axisLeft(this.scaleY).ticks(this.yMax) : d3.axisLeft(this.scaleY)
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
         ySelection.attr("transform", `translate(${this.margins.left}, ${this.margins.bottom})`).call(yAxis)
