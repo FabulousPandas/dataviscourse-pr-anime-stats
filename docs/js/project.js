@@ -23,7 +23,7 @@ loadData().then((loadedData => {
 
     let lineChart = new LineChart(globalApplicationState)
     let barGraph = new BarGraph(globalApplicationState)
-    
+
     d3.select("#filters")
         .selectAll("input")
         .data(globalApplicationState.genres)
@@ -53,5 +53,5 @@ loadData().then((loadedData => {
                 lineChart.update()
                 barGraph.draw()
             })    
-        .style("width", 25 + "px")        
+        .style("width", 25 + "px")  
 }))
