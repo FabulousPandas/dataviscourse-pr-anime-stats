@@ -143,14 +143,14 @@ class LineChart {
                     .attr("y2", this.margins.top + 20)
 
                 const yearHovered = this.scaleX.invert(event.offsetX).getFullYear().toString()
-                const filteredData = new Map([...this.filteredYears].map(([k,v]) => { let filtered = v.filter(([k2,v2]) => { return k2 === yearHovered }); return [k, filtered] }))
+                const filteredData = new Map([...this.filteredYears].map(([k,v]) => { let filtered = v.filter(([k2,v2]) => { return k2 === yearHovered }); return [k, filtered] }).sort((a,b) => b[1][0][1].length - a[1][0][1].length))
                 overlaySelection.selectAll("text").remove()    
 
                 overlaySelection.selectAll("text")
                     .data(filteredData)
                     .join("text")
-                    .text(d => `${d[0]} ${d[1][0][1].length} show${d[1][0][1].length === 1 ? "" : "s"}`)
-                    .attr("x", (event.offsetX > 3/4 * this.visWidth) ? (event.offsetX - 150) : (event.offsetX + 5))
+                    .text(d => `${d[0]} - ${d[1][0][1].length} show${d[1][0][1].length === 1 ? "" : "s"}`)
+                    .attr("x", (event.offsetX > 3/4 * this.visWidth) ? (event.offsetX - 155) : (event.offsetX + 5))
                     .attr("y", (d, i) => i * 20 + this.margins.top + 40)
                     .attr("alignment-baseline", "hanging")
                     .attr("stroke",d => this.colorScale(d[0]))
@@ -159,7 +159,7 @@ class LineChart {
 
                 overlaySelection.append("text")
                     .text(yearHovered)
-                    .attr("x", (event.offsetX > 3/4 * this.visWidth) ? (event.offsetX - 150) : (event.offsetX + 5))
+                    .attr("x", (event.offsetX > 3/4 * this.visWidth) ? (event.offsetX - 155) : (event.offsetX + 5))
                     .attr("y", this.margins.top + 20)
                     .attr("alignment-baseline", "hanging")
                     .attr("fill", "black")
