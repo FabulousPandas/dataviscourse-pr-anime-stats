@@ -47,7 +47,10 @@ class BumpChart {
         labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
         labels.append("text").text("Popularity").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
 
-        xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
+        xSelection.attr("transform", `translate(50, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
 
+    drawCircles() {
+        
+    }
 }
