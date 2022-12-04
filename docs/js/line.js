@@ -76,7 +76,6 @@ class LineChart {
         let genreGrouped = new Map()
         this.globalApplicationState.genreData.forEach((value,key) => {genreGrouped.set(key, [...d3.group(value, d => d.year)])})
         let filtered = ([...genreGrouped].filter(([k,v]) => this.globalApplicationState.selectedGenres.includes(k)))
-        console.log(filtered[0].)
         filtered.forEach(([k, v]) => {
             for(let i = this.minYear; i < this.maxYear; i++)
             {
