@@ -14,7 +14,7 @@ class BumpChart {
             return d3.max(Object.values(data.genre_counts))
         })
 
-        this.minYear = this.years[0]
+        this.minYear = "2010"
         this.maxYear = "2022"
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
@@ -39,8 +39,8 @@ class BumpChart {
         ySelection.selectAll("text")
             .data(this.globalApplicationState.selectedGenres)
             .join("text")
-            .attr("x", 10)
-            .attr("y", (d,i) => this.margins.left + 10 + i * (500/this.globalApplicationState.selectedGenres.length))
+            .attr("x", 30)
+            .attr("y", (d,i) => this.margins.left + 60 + i * (450/this.globalApplicationState.selectedGenres.length))
             .text(d => d)
 
         let labels = this.svg.append("g").attr("id", "axis-labels")
