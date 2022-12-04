@@ -5,7 +5,7 @@ class LineChart {
         this.visWidth = 1000
         this.visHeight = 600
 
-        this.margins = {left: 20, right: 20, top: 20, bottom: 50}
+        this.margins = {left: 50, right: 20, top: 50, bottom: 40}
 
         this.years = Array.from(this.globalApplicationState.seasonData.keys())
         this.years.sort()
@@ -58,6 +58,10 @@ class LineChart {
         
         let xAxis = d3.axisBottom(this.scaleX)
         let yAxis = d3.axisLeft(this.scaleY)
+
+        let labels = this.svg.append("g").attr("id", "axis-labels")
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
+        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
         ySelection.attr("transform", `translate(${this.margins.left}, ${this.margins.bottom})`).call(yAxis)
