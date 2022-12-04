@@ -33,11 +33,11 @@ class BarGraph {
     }
 
     drawAxes() {
-        d3.select("#axis-labels").remove();
+        d3.select("#bar-axis-labels").remove();
         let xAxis = d3.axisBottom(this.scaleX);
         let yAxis = d3.axisLeft(this.scaleY);
 
-        let labels = d3.select("#bar-graph").append("g").attr("id", "axis-labels");
+        let labels = d3.select("#bar-graph").append("g").attr("id", "bar-axis-labels");
         labels.append("text").text("Genre").attr("x", this.visWidth/2).attr("y", this.visHeight)
         labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.marginTop).attr("y", 15).attr("transform", "rotate(-90)")
 
