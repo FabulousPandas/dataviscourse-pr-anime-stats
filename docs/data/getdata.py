@@ -49,21 +49,21 @@ def anime_list(a_json):
     return anime_list
 
 def gen_dict(anime_list):
-    season_list = {}
+    year_list = {}
     genre_json = {}
     banned_genres = ["Award Winning"]
     for anime in anime_list:
         try:
-            # Get the season for this anime
-            season = anime["start_season"]["season"].title() + " " + str(anime["start_season"]["year"])
-            if season not in season_list:
-                season_entry = {}
-                season_entry["season"] = ""
-                season_entry["genre_counts"] = {}
-                season_entry["anime"] = []
-                season_list[season] = season_entry
-            season_entry = season_list[season]
-            season_entry["season"] = season
+            # Get the year for this anime
+            year = str(anime["start_season"]["year"])
+            if year not in year_list:
+                year_entry = {}
+                year_entry["year"] = ""
+                year_entry["genre_counts"] = {}
+                year_entry["anime"] = []
+                year_list[year] = year_entry
+            year_entry = year_list[year]
+            year_entry["year"] = year
             genre_list = []
             # Makes a list of all of the genres this anime has
             for genre in anime["genres"]:
@@ -73,13 +73,13 @@ def gen_dict(anime_list):
             # Creates the anime object and fills it with metadata
             entry = {}
             entry["title"] = anime["title"]
-            entry["season"] = season
+            entry["year"] = year
             entry["genres"] = genre_list
             entry["rating"] = anime["mean"]
             entry["rank"] = anime["rank"]
             entry["popularity"] = anime["popularity"]
-            genre_count = season_entry["genre_counts"]
-            # Final touches for season and genre JSON objects
+            genre_count = year_entry["genre_counts"]
+            # Final touches for year and genre JSON objects
             for genre in genre_list:
                 if genre in genre_count:
                     genre_count[genre] += 1
@@ -88,23 +88,23 @@ def gen_dict(anime_list):
                 if genre not in genre_json:
                     genre_json[genre] = []
                 genre_json[genre].append(entry)
-            season_entry["anime"].append(entry)
+            year_entry["anime"].append(entry)
             pop = entry["popularity"]
             if (pop % 500 == 0):
                 print("Processed Anime %d / %d into json" % (pop, len(anime_list)))
         except KeyError:
             continue
 
-    return season_list, genre_json
+    return year_list, genre_json
 
-def format_seasons(seasons_dict):
-    seasons = []
-    for season in seasons_dict:
-        season_arr = []
-        season_arr.append(season)
-        season_arr.append(seasons_dict[season])
-        seasons.append(season_arr)
-    return seasons
+def format_years(years_dict):
+    years = []
+    for year in years_dict:
+        year_arr = []
+        year_arr.append(year)
+        year_arr.append(years_dict[year])
+        years.append(year_arr)
+    return years
 
 def format_genres(genre_dict):
     genres = []
@@ -123,12 +123,12 @@ if __name__ == "__main__":
     anime = anime_list(popular_anime)
     print("Got all requests from MAL")
     print("Processing data for json...")
-    seasons, genres = gen_dict(anime)
-    seasons = format_seasons(seasons)
+    years, genres = gen_dict(anime)
+    years = format_years(years)
     genres = format_genres(genres)
-    with open("anime_seasons.json", "w") as outfile:
-        outfile.write(json.dumps(seasons, indent=4, ensure_ascii=False))
-    print("Generated Season JSON!")
+    with open("anime_years.json", "w") as outfile:
+        outfile.write(json.dumps(years, indent=4, ensure_ascii=False))
+    print("Generated year JSON!")
     with open("anime_genres.json", "w") as outfile:
         outfile.write(json.dumps(genres, indent=4, ensure_ascii=False))
     print("Generated genre JSON!")
