@@ -11,7 +11,9 @@ class LineChart {
         this.years.sort()
         let yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
-            return d3.max(Object.values(data.genre_counts))
+            let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
+            console.log(filteredData)
+            return d3.max(filteredData, d => d[1])
         })
 
 
@@ -24,6 +26,7 @@ class LineChart {
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.updateFilteredData()
+        this.drawAxisLabels()
         this.drawAxis()
         this.drawLegend()
         this.drawLines()
@@ -33,9 +36,21 @@ class LineChart {
     update() {
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.updateFilteredData()
+        this.updateYScale()
+        this.drawAxis()
         this.drawLines()
         this.drawLegend()
         this.drawInteraction()
+    }
+    
+    updateYScale() {
+        let yMax = d3.max(this.years, d => {
+            let data = this.globalApplicationState.seasonData.get(d)
+            let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
+            console.log(filteredData)
+            return d3.max(filteredData, d => d[1])
+        })
+        this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
     }
 
     updateFilteredData() {
@@ -78,16 +93,18 @@ class LineChart {
             .text(d => d)
     }
 
+    drawAxisLabels() {
+        let labels = this.svg.append("g").attr("id", "axis-labels")
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
+        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
+    }
+
     drawAxis() {
         let xSelection = this.svg.select("#x-axis")
         let ySelection = this.svg.select("#y-axis")
         
         let xAxis = d3.axisBottom(this.scaleX)
         let yAxis = d3.axisLeft(this.scaleY)
-
-        let labels = this.svg.append("g").attr("id", "axis-labels")
-        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
         ySelection.attr("transform", `translate(${this.margins.left}, ${this.margins.bottom})`).call(yAxis)
