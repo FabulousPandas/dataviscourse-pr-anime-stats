@@ -7,8 +7,6 @@ class LineChart {
 
         this.margins = {left: 20, right: 20, top: 20, bottom: 50}
 
-        // this.globalApplicationState.selectedGenres = ["Action", "Adventure", "Romance", "Slice of Life"]
-
         this.years = Array.from(this.globalApplicationState.seasonData.keys())
         this.years.sort()
         let yMax = d3.max(this.years, d => {
@@ -20,7 +18,6 @@ class LineChart {
         this.maxYear = "2022"
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
-        // this.scaleX = d3.scalePoint().domain(this.seasons).range([this.margins.left, this.visWidth - this.margins.right])
         this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
@@ -29,22 +26,6 @@ class LineChart {
         this.drawLegend()
         this.drawLines()
     }
-
-    // sortSeason(a, b){ 
-    //     let seasonValue = {"Spring": 0, "Summer": 1, "Fall": 2, "Winter": 3}
-    //     let [a_season, a_year] = a.split(" ")
-    //     let [b_season, b_year] = b.split(" ")
-    //     if(a_year < b_year)
-    //         return -1
-    //     else if (a_year > b_year)
-    //         return 1
-    //     else {
-    //         if (seasonValue[a_season] < seasonValue[b_season])
-    //             return -1
-    //         else
-    //             return 1
-    //     }
-    // }
 
     update() {
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
