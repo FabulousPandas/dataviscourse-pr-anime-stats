@@ -12,7 +12,6 @@ class LineChart {
         let yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
             let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
-            console.log(filteredData)
             return d3.max(filteredData, d => d[1])
         })
 
@@ -47,7 +46,6 @@ class LineChart {
         let yMax = d3.max(this.years, d => {
             let data = this.globalApplicationState.seasonData.get(d)
             let filteredData = Object.entries(data.genre_counts).filter(d => {return this.globalApplicationState.selectedGenres.includes(d[0])})
-            console.log(filteredData)
             return d3.max(filteredData, d => d[1])
         })
         this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
