@@ -23,13 +23,14 @@ loadData().then((loadedData => {
 
     let lineChart = new LineChart(globalApplicationState)
     let barGraph = new BarGraph(globalApplicationState)
-
+    
     d3.select("#filters")
         .selectAll("input")
         .data(globalApplicationState.genres)
         .enter()
         .append("label")
             .text((d) => d)
+        .style("width",  125 + "px")
         .append("input")
             .attr("type", "checkbox")
             .attr("id", (d) => d = d.replace(/\s/g, ''))
@@ -51,5 +52,6 @@ loadData().then((loadedData => {
                     d3.selectAll(".unchecked").property("disabled", false);
                 lineChart.update()
                 barGraph.draw()
-            })
+            })    
+        .style("width", 25 + "px")        
 }))

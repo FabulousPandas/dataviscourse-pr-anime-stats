@@ -46,8 +46,9 @@ class BarGraph {
             .join("rect")
                 .attr("x", (d) => this.scaleX(d[0]) + this.marginX)
                 .attr("y", (d) => this.scaleY(d[1].length))
-                .attr("width", this.scaleX.bandwidth() - 100)
+                .transition(100)
                 .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginY)
+                .attr("width", this.scaleX.bandwidth() - 100)
                 .attr("fill", (d) => this.colorScale(d[0]))
     }
 }
