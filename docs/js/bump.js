@@ -18,8 +18,7 @@ class BumpChart {
         this.svg = d3.select("#bump-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.drawAxis()
-        this.drawLines()
-        this.drawCircles()
+        this.drawSeries()
     }
 
     updateData() {
@@ -64,8 +63,7 @@ class BumpChart {
         this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.updateData()
         this.drawAxis()
-        this.drawLines()
-        this.drawCircles()
+        this.drawSeries()
     }
 
     drawAxis() {
@@ -88,24 +86,24 @@ class BumpChart {
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
-
-    drawCircles() {
-        let circGroup = d3.select("#circles")
+    
+    drawSeries(){
+        let grouped = d3.group(this.chartData, d => d.genre)
+        let seriesGroup = d3.select("#series")
             .selectAll("g")
-            .data(this.chartData)
+            .data(grouped)
             .join("g")
             .attr("transform", `translate(0, ${this.margins.bottom })`)
 
         let circ = circGroup.selectAll('circle')
-            .data(this.chartData)
-            .join('circle')
+        .data(d=>d[1])
+        .join('circle')
             .attr('cx', d => this.scaleX(new Date(d.year)))
             .attr('r', 15)
             .attr('fill', d => this.colorScale(d.genre))
             .attr('cy', d => this.scaleY(d.ranking))
-
-        let text = circGroup.selectAll('text')  
-            .data(this.chartData)
+        let text = selection.selectAll('text')  
+            .data(d=>d[1])
             .join('text')
             .text(d => d.ranking + 1)
             .attr('dx', d => this.scaleX(new Date(d.year)))
@@ -115,19 +113,16 @@ class BumpChart {
             .attr('fill', 'white')
     }
 
-    drawLines() {
-        let lineSelection = this.svg.select("#lines")
+    drawLines(selection) {
         let lineGenerator = d3.line()
-            .x(d => { console.log(d);return this.scaleX(new Date(d.year)) })
+            .x(d => { return this.scaleX(new Date(d.year)) })
             .y(d => { return this.scaleY(d.ranking) })
-        let lineData = d3.group(this.chartData, d => d.genre)
-        lineSelection.selectAll("path")
-            .data(lineData)
+        selection.selectAll("path")
+            .data(d=>{ return [d[1]] })
             .join("path")
-            .attr("d", d => { return lineGenerator(d[1])})
-            .attr("transform", `translate(0, ${this.margins.bottom })`)
+            .attr("d", d => { return lineGenerator(d)})
             .attr("fill", "none")
-            .attr("stroke", d => this.colorScale(d[0]))
+            .attr("stroke", d => this.colorScale(d[0].genre))
             .attr("stroke-width", 10)
     }
 }
