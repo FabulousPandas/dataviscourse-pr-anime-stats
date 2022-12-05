@@ -79,6 +79,7 @@ class BumpChart {
             .transition()
             .attr("y", (d,i) => this.scaleY(d.ranking))
             .attr("transform", `translate(0, ${this.margins.bottom})`)
+            .attr("alignment-baseline", "middle")
             .attr("text-anchor", "end")
             .text(d => d.genre)
 
@@ -89,6 +90,7 @@ class BumpChart {
             .transition()
             .attr("y", (d,i) => this.scaleY(d.ranking))
             .attr("transform", `translate(0, ${this.margins.bottom})`)
+            .attr("alignment-baseline", "middle")
             .text(d => d.genre)
 
         let labels = this.svg.append("g").attr("id", "axis-labels")
