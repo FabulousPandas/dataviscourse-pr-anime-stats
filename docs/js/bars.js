@@ -27,7 +27,6 @@ class BarGraph {
         this.scaleY = d3.scaleLinear()
             .domain([0, d3.max(this.genreData, (d) => d[1].length)])
             .range([this.visHeight - this.marginBottom, this.marginTop]).nice()
-        this.colorScale = d3.scaleOrdinal().domain(this.globalState.selectedGenres).range(d3.schemeCategory10)
         this.drawAxes()
         this.drawBars()
     }
@@ -55,6 +54,6 @@ class BarGraph {
                 .attr("y", (d) => this.scaleY(d[1].length))
                 .attr("width", this.scaleX.bandwidth() - (this.marginX - 20) * 2)
                 .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginBottom)
-                .attr("fill", (d) => this.colorScale(d[0]))
+                .attr("fill", (d) => this.globalState.colorScale(d[0]))
     }
 }
