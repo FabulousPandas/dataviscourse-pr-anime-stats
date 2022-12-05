@@ -70,7 +70,6 @@ class BumpChart {
     drawAxisLabel() {
         let labels = this.svg.append("g").attr("id", "axis-labels")
         labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
-        labels.append("text").text("2022").attr("x", 829).attr("y", this.visHeight - 34.3).attr("font-size", 10.5)
     }
 
     drawAxis() {
