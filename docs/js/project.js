@@ -12,6 +12,10 @@ const globalApplicationState =  {
     genres: ["Action", "Adventure", "Avant Garde", "Boys Love", "Comedy", "Drama", 
              "Fantasy", "Girls Love", "Gourmet", "Horror", "Mystery", "Romance", 
              "Sci-Fi", "Slice of Life", "Sports", "Supernatural", "Suspense"],
+    themes: ["Adult Cast", "Anthropomorphic", "CGDCT", "Childcare", "Combat Sports",
+            "Crossdressing", "Delinquents", "Detective", "Educational", "Gag Humor",
+            "Gore", "Harem", "High Stakes Game", "Historical", "Idols (Female)",
+            "Idols (Male)", "Isekai"],
     selectedGenres: ["Action", "Comedy", "Drama", "Romance"],
 }
 
@@ -23,20 +27,31 @@ loadData().then((loadedData => {
 
     let lineChart = new LineChart(globalApplicationState)
     let barGraph = new BarGraph(globalApplicationState)
+    let bumpChart = new BumpChart(globalApplicationState)
 
+    d3.select("#filters") .append("text").text("Genres:")
+    create_checkboxes(globalApplicationState.genres, lineChart, barGraph, bumpChart)
+
+    d3.select("#filters").append("text").text("Themes:")
+    create_checkboxes(globalApplicationState.themes, lineChart, barGraph, bumpChart)
+}))
+
+function create_checkboxes(data, lineChart, barGraph, bumpChart) {
     d3.select("#filters")
+        .append("g")
         .selectAll("input")
-        .data(globalApplicationState.genres)
+        .data(data)
         .enter()
         .append("label")
             .text((d) => d)
+        .style("width",  125 + "px")
         .append("input")
             .attr("type", "checkbox")
             .attr("id", (d) => d = d.replace(/\s/g, ''))
             .property("checked", (d) => globalApplicationState.selectedGenres.includes(d))
             .classed("unchecked", (d) => !globalApplicationState.selectedGenres.includes(d))
             .on("click", (d, genre) => {
-                genre_id = genre.replace(/\s/g, '')
+                genre_id = genre.replace(/[^A-Za-z\d]/g, '')
                 const index = globalApplicationState.selectedGenres.indexOf(genre);
                 if (index > -1) {
                     globalApplicationState.selectedGenres.splice(index, 1)
@@ -51,5 +66,7 @@ loadData().then((loadedData => {
                     d3.selectAll(".unchecked").property("disabled", false);
                 lineChart.update()
                 barGraph.draw()
-            })
-}))
+                bumpChart.update()
+            })    
+        .style("width", 25 + "px")  
+}

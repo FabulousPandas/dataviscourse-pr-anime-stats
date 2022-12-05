@@ -6,6 +6,7 @@
     <title>Anime Stats</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <!-- 
        Bootstrap styling if you want to use it: 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -13,9 +14,11 @@
     <script src="js/project.js"></script>
     <script src="js/line.js"></script>
     <script src="js/bars.js"></script>
+    <script src="js/bump.js"></script>
 </head>
 
 <body>
+    <div id="filters"></div>
     <div id="header-wrap">
         <header>
             <h1>Anime Stats</h1>
@@ -23,7 +26,6 @@
     </div>
 
     <div id="content">
-        <div id="filters" style="display: flex; flex-flow: row wrap; gap: 10px"></div>
         <div>
             <svg id="line-chart">
                 <g id="x-axis"></g>
@@ -37,6 +39,10 @@
                 <g id="bar-y-axis"></g>
                 <g id="bars"></g>
             </svg>
+            <svg id="bump-chart">
+                <g id ="x-axis"></g>
+                <g id ="y-axis"></g>
+            </svg>"
         </div>
     </div>
 </body>
