@@ -18,6 +18,7 @@ class BumpChart {
         this.svg = d3.select("#bump-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.drawAxis()
+        this.drawAxisLabel()
         this.drawSeries()
     }
 
@@ -66,6 +67,11 @@ class BumpChart {
         this.drawSeries()
     }
 
+    drawAxisLabel() {
+        let labels = this.svg.append("g").attr("id", "axis-labels")
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
+    }
+
     drawAxis() {
         let xSelection = this.svg.select("#x-axis")
         let ySelectionLeft = this.svg.select("#left-label")
@@ -92,9 +98,6 @@ class BumpChart {
             .attr("transform", `translate(0, ${this.margins.bottom})`)
             .attr("alignment-baseline", "middle")
             .text(d => d.genre)
-
-        let labels = this.svg.append("g").attr("id", "axis-labels")
-        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
