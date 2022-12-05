@@ -48,6 +48,7 @@
     position: relative;
     text-align: center;
     font-size: 30px;
+    top: 20px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px; /* Gotten from https://getcssscan.com/css-box-shadow-examples */
     z-index: 100;
