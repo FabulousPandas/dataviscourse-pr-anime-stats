@@ -55,5 +55,20 @@ class BarGraph {
                 .attr("width", this.scaleX.bandwidth() - (this.marginX - 20) * 2)
                 .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginBottom)
                 .attr("fill", (d) => this.globalState.colorScale(d[0]))
+                .on("mouseover", (event, d) => {
+                    let rect = d3.select("#bars").selectAll("rect")
+                    rect.attr("opacity", (arr) => arr[0] == d[0] ? 1 : .1)
+                    d3.select("#bars").append("text")
+                        .text("Total Number of " + d[0] + " Anime: " + d[1].length)
+                        .attr("fill", this.globalState.colorScale(d[0]))
+                        .attr("text-anchor", "middle")
+                        .attr("x", this.visWidth / 2)
+                        .attr("y", 20);
+                })
+                .on("mouseout", (event, d) => {
+                    let rect = d3.select("#bars").selectAll("rect")
+                    rect.attr("opacity", 1)
+                    d3.select("#bars").selectAll("text").remove()
+                })
     }
 }
