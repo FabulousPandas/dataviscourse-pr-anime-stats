@@ -49,7 +49,6 @@ class BumpChart {
                 }
             })
         })
-        console.log(filteredAvgs)
         let rankings = new Array()
         let groupByYear = d3.group(filteredAvgs, d => d.year)
         groupByYear.forEach(d => {
