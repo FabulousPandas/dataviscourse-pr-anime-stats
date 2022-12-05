@@ -3,10 +3,10 @@ class BarGraph {
     constructor(globalState) {
         this.globalState = globalState;
         this.visWidth = 1000;
-        this.visHeight = 450;
-        this.marginX = 50;
-        this.marginTop = 10;
-        this.marginBottom = 30;
+        this.visHeight = 500;
+        this.marginX = 60;
+        this.marginTop = 20;
+        this.marginBottom = 50;
 
         d3.select("#bar-graph").attr("width", this.visWidth).attr("height", this.visHeight)
         
@@ -37,8 +37,8 @@ class BarGraph {
         let yAxis = d3.axisLeft(this.scaleY);
 
         let labels = d3.select("#bar-graph").append("g").attr("id", "bar-axis-labels");
-        labels.append("text").text("Genre").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.marginTop).attr("y", 15).attr("transform", "rotate(-90)")
+        labels.append("text").text("Genre").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
+        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2).attr("y", 15).attr("transform", "rotate(-90)").attr("text-anchor", "middle")
 
         d3.select("#bar-x-axis").call(xAxis).attr("transform", "translate(0, " + (this.visHeight - this.marginBottom) + ")");
         d3.select("#bar-y-axis").call(yAxis).attr("transform", "translate(" + this.marginX + ", 0" + ")");
@@ -52,8 +52,9 @@ class BarGraph {
             .join("rect")
                 .attr("x", (d) => this.scaleX(d[0]) + this.marginX - 20)
                 .attr("y", (d) => this.scaleY(d[1].length))
-                .attr("width", this.scaleX.bandwidth() - (this.marginX - 20) * 2)
                 .attr("height", (d) => this.visHeight - this.scaleY(d[1].length) - this.marginBottom)
+                .transition()
+                .attr("width", this.scaleX.bandwidth() - (this.marginX - 20) * 2)
                 .attr("fill", (d) => this.globalState.colorScale(d[0]))
     }
 }

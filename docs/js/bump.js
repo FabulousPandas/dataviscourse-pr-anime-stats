@@ -81,8 +81,7 @@ class BumpChart {
             .text(d => d.genre)
 
         let labels = this.svg.append("g").attr("id", "axis-labels")
-        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Average Popularity").attr("x", this.visWidth/2).attr("y", 50)
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
@@ -113,6 +112,7 @@ class BumpChart {
             .attr('cx', d => this.scaleX(new Date(d.year)))
             .attr('r', 15)
             .attr('fill', d => this.colorScale(d.genre))
+            .transition()
             .attr('cy', d => this.scaleY(d.ranking))
 
         let text = selection.selectAll('text')  
@@ -120,6 +120,7 @@ class BumpChart {
             .join('text')
             .text(d => d.ranking + 1)
             .attr('dx', d => this.scaleX(new Date(d.year)))
+            .transition()
             .attr('dy', d => this.scaleY(d.ranking))
             .attr('text-anchor', 'middle')
             .attr('alignment-baseline', 'middle')
@@ -133,9 +134,10 @@ class BumpChart {
         selection.selectAll("path")
             .data(d=>{ return [d[1]] })
             .join("path")
+            .transition()
             .attr("d", d => { return lineGenerator(d)})
             .attr("fill", "none")
             .attr("stroke", d => this.colorScale(d[0].genre))
-            .attr("stroke-width", 10)
+            .attr("stroke-width", 8)
     }
 }

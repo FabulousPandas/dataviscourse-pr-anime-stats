@@ -5,7 +5,7 @@ class LineChart {
         this.visWidth = 1000
         this.visHeight = 600
 
-        this.margins = {left: 50, right: 20, top: 50, bottom: 40}
+        this.margins = {left: 60, right: 20, top: 50, bottom: 20}
 
         this.years = Array.from(this.globalApplicationState.seasonData.keys())
         this.years.sort()
@@ -70,8 +70,8 @@ class LineChart {
 
     drawAxisLabels() {
         let labels = this.svg.append("g").attr("id", "axis-labels")
-        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
+        labels.append("text").text("Number of Shows").attr("x", -this.visHeight/2 ).attr("y", 15).attr("transform", "rotate(-90)").attr("text-anchor", "middle")
     }
 
     drawAxis() {
@@ -97,6 +97,7 @@ class LineChart {
             .join("path")
             .attr("d", d => lineGenerator(d[1]))
             .attr("transform", `translate(0, ${this.margins.bottom })`)
+            .transition()
             .attr("fill", "none")
             .attr("stroke", d => this.globalApplicationState.colorScale(d[0]))
             .attr("stroke-width", 1)
