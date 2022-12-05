@@ -5,7 +5,7 @@ class BumpChart {
         this.visWidth = 1000
         this.visHeight = 600
 
-        this.margins = {left: 130, right: 20, top: 50, bottom: 40}
+        this.margins = {left: 130, right: 20, top: 50, bottom: 60}
 
         this.minYear = "2010"
         this.maxYear = "2022"
@@ -79,12 +79,12 @@ class BumpChart {
             .attr("x", 30)
             .transition()
             .attr("y", (d,i) => this.scaleY(d.ranking))
-            .attr("transform", `translate(0, ${this.margins.bottom })`)
+            .attr("transform", `translate(0, ${this.margins.bottom})`)
             .text(d => d.genre)
 
         let labels = this.svg.append("g").attr("id", "axis-labels")
         labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Popularity").attr("x", -this.visHeight/2 - this.margins.top).attr("y", 15).attr("transform", "rotate(-90)")
+        labels.append("text").text("Average Popularity").attr("x", this.visWidth/2).attr("y", 50)
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
@@ -103,12 +103,7 @@ class BumpChart {
             .attr('r', 15)
             .attr('fill', d => this.colorScale(d.genre))
             .attr('cy', d => this.scaleY(d.ranking))
-            circ.on("mouseover", function() {
-                console.log("hovered")
-              })
-              circ.on("mouseout", function() {
-                console.log("off")
-              })
+
         let text = circGroup.selectAll('text')  
             .data(this.chartData)
             .join('text')
