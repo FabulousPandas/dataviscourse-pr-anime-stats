@@ -22,24 +22,20 @@ class LineChart {
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
         this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
-        this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.updateFilteredData()
         this.drawAxisLabels()
         this.drawAxis()
-        this.drawLegend()
         this.drawLines()
         this.drawInteraction()
     }
 
     update() {
-        this.colorScale = d3.scaleOrdinal().domain(this.globalApplicationState.selectedGenres).range(d3.schemeCategory10)
         this.updateFilteredData()
         this.updateYScale()
         this.drawAxis()
         this.drawLines()
-        this.drawLegend()
         this.drawInteraction()
     }
     
@@ -74,25 +70,6 @@ class LineChart {
         this.filteredYears = new Map(filtered)
     }
 
-    drawLegend() {
-        let legendSelection = this.svg.select("#legend")
-        
-        legendSelection.selectAll("rect")
-            .data(this.globalApplicationState.selectedGenres)
-            .join("rect")
-            .attr("x", (d,i) => this.margins.left + i * 150)
-            .attr("y", this.margins.top)
-            .attr("width", 10)
-            .attr("height", 10)
-            .attr("fill", d => this.colorScale(d))
-        legendSelection.selectAll("text")
-            .data(this.globalApplicationState.selectedGenres)
-            .join("text")
-            .attr("x", (d,i) => this.margins.left + 20 + i * 150)
-            .attr("y", this.margins.top + 10)
-            .text(d => d)
-    }
-
     drawAxisLabels() {
         let labels = this.svg.append("g").attr("id", "axis-labels")
         labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
@@ -123,7 +100,7 @@ class LineChart {
             .attr("d", d => lineGenerator(d[1]))
             .attr("transform", `translate(0, ${this.margins.bottom })`)
             .attr("fill", "none")
-            .attr("stroke", d => this.colorScale(d[0]))
+            .attr("stroke", d => this.globalApplicationState.colorScale(d[0]))
             .attr("stroke-width", 1)
             
     }
@@ -153,9 +130,9 @@ class LineChart {
                     .attr("x", (event.offsetX > 3/4 * this.visWidth) ? (event.offsetX - 155) : (event.offsetX + 5))
                     .attr("y", (d, i) => i * 20 + this.margins.top + 40)
                     .attr("alignment-baseline", "hanging")
-                    .attr("stroke",d => this.colorScale(d[0]))
+                    .attr("stroke",d => this.globalApplicationState.colorScale(d[0]))
                     .attr("stroke-width", 0.2)
-                    .attr("fill", d => this.colorScale(d[0]))
+                    .attr("fill", d => this.globalApplicationState.colorScale(d[0]))
 
                 overlaySelection.append("text")
                     .text(yearHovered)

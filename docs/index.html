@@ -18,22 +18,33 @@
 
 <body>
     <div id="filters"></div>
-    <div id="header-wrap">
+    <div id="legend-section">
+        <svg id="legend"></svg>
+    </div>
+    <div id="main-page">
+        <div id="header-wrap">
         <header>
             <h1>Anime Stats</h1>
         </header>
-    </div>
-
-    <div id="content">
-        <div>
-            <svg id="line-chart">
+        </div>
+        <div id="content">
+            <div class="vis-header">
+            <header>
+                <h1>Number of Anime Created Per Year</h1>
+            </header>
+            </div>
+            <svg id="line-chart" class="vis">
                 <g id="x-axis"></g>
                 <g id="y-axis"></g>
-                <g id="legend"></g>
                 <g id="lines"></g>
                 <g id="overlay"><line></line></g>
             </svg>
-            <svg id="bar-graph">
+            <div class="vis-header">
+            <header>
+                <h1>Number of Anime Created Overall</h1>
+            </header>
+            </div>
+            <svg id="bar-graph" class="vis">
                 <g id="bar-x-axis"></g>
                 <g id="bar-y-axis"></g>
                 <g id="bars"></g>
