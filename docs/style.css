@@ -76,7 +76,6 @@
 #main-page {
 filter: hue-rotate(0deg);
 
-pointer-events: none !important;
 position: relative;
 left: 0;
 top: 0;
@@ -86,7 +85,7 @@ background-image: url(https://i.imgur.com/w6otSXf.png),
 url(https://i.imgur.com/Uz2WWFg.png),
 url(https://i.imgur.com/D1fpagO.png);
 animation: SAKURA 10s linear infinite;
-z-index: -999;
+z-index: 9;
 }
 @keyframes SAKURA {
 0% { background-position: 0 0, 0 0, 0 0; }
