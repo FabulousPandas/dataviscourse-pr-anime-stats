@@ -85,9 +85,6 @@ function create_checkboxes(data, lineChart, barGraph, bumpChart) {
         });
     label.append("span").classed("slider round", true)
     div.append("label").classed("slider-label", true).text((d) => d);
-
-    d3.select("#filters").append("line")
-        .attr("stroke", "black")
 }
 
 function updateColors() {
@@ -98,17 +95,11 @@ function updateColors() {
 function drawLegend() {
     let legendSelection = d3.select("#legend")
     
-    if (globalApplicationState.selectedGenres.length <= 5) {
-        d3.select("#legend-section").style("height", "25px");
-    } else {
-        d3.select("#legend-section").style("height", "50px");
-    }
-    
     legendSelection.selectAll("rect")
         .data(globalApplicationState.selectedGenres)
         .join("rect")
         .attr("x", (d,i) => 10 + (i % 5) * 150)
-        .attr("y", (d, i) => i < 5 ? 0 : 25)
+        .attr("y", (d, i) => i < 5 ? 5 : 30)
         .attr("width", 10)
         .attr("height", 10)
         .attr("fill", d => globalApplicationState.colorScale(d))
@@ -116,6 +107,6 @@ function drawLegend() {
         .data(globalApplicationState.selectedGenres)
         .join("text")
         .attr("x", (d,i) => 30 + (i % 5) * 150)
-        .attr("y", (d, i) => i < 5 ? 10 : 35)
+        .attr("y", (d, i) => i < 5 ? 15 : 40)
         .text(d => d)
 }
