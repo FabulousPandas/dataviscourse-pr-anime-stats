@@ -40,7 +40,7 @@ def anime_list(a_json):
         request = get_request(url)
         anime_list.append(request)
         pop = request["popularity"]
-        if (pop % 700 == 0 and len(data) - pop > 50):
+        if (pop % 500 == 0 and len(data) - pop > 50):
             print("Requested Anime %d / %d, got rate limited" % (pop, len(data)))
             for count in range(5, 0, -1):
                 print("Continuing in " + str(count) + "...")
@@ -116,7 +116,7 @@ def format_genres(genre_dict):
     return genres
 
 if __name__ == "__main__":
-    popular_anime = popular_anime_json(2000)
+    popular_anime = popular_anime_json(14000)
     print("Got most popular anime")
     # The popular_anime object just contains the anime ids, we need to get all of the anime metadata
     print("Requesting anime metadata...")
