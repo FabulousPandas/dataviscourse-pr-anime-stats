@@ -5,7 +5,7 @@ class BumpChart {
         this.visWidth = 1000
         this.visHeight = 600
 
-        this.margins = {left: 130, right: 20, top: 50, bottom: 60}
+        this.margins = {left: 160, right: 160, top: 50, bottom: 60}
 
         this.minYear = "2010"
         this.maxYear = "2022"
@@ -68,13 +68,24 @@ class BumpChart {
 
     drawAxis() {
         let xSelection = this.svg.select("#x-axis")
-        let ySelection = this.svg.select("#y-axis")
-        
+        let ySelectionLeft = this.svg.select("#left-label")
+        let ySelectionRight = this.svg.select("#right-label")
+
         let xAxis = d3.axisBottom(this.scaleX)
-        ySelection.selectAll("text")
+        ySelectionLeft.selectAll("text")
             .data(this.left)
             .join("text")
-            .attr("x", 30)
+            .attr("x", 130)
+            .transition()
+            .attr("y", (d,i) => this.scaleY(d.ranking))
+            .attr("transform", `translate(0, ${this.margins.bottom})`)
+            .attr("text-anchor", "end")
+            .text(d => d.genre)
+
+        ySelectionRight.selectAll("text")
+            .data(this.right)
+            .join("text")
+            .attr("x", 870)
             .transition()
             .attr("y", (d,i) => this.scaleY(d.ranking))
             .attr("transform", `translate(0, ${this.margins.bottom})`)
