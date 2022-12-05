@@ -17,7 +17,7 @@ class LineChart {
 
 
         this.minYear = this.years[0]
-        this.maxYear = "2022"
+        this.maxYear = "2023"
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
         this.scaleY = d3.scaleLinear().domain([0, this.yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
