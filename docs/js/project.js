@@ -44,10 +44,10 @@ loadData().then((loadedData => {
     create_checkboxes(globalApplicationState.genres, lineChart, barGraph, bumpChart)
 
     d3.select("#filters").append("text").text("Themes:")
-    create_checkboxes(globalApplicationState.themes, lineChart, barGraph)
+    create_checkboxes(globalApplicationState.themes, lineChart, barGraph, bumpChart)
 
     d3.select("#filters") .append("text").text("Demographics:")
-    create_checkboxes(globalApplicationState.demographics, lineChart, barGraph)
+    create_checkboxes(globalApplicationState.demographics, lineChart, barGraph, bumpChart)
 }))
 
 function create_checkboxes(data, lineChart, barGraph, bumpChart) {
