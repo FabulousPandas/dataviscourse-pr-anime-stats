@@ -5,7 +5,7 @@ class BumpChart {
         this.visWidth = 1000
         this.visHeight = 600
 
-        this.margins = {left: 130, right: 20, top: 50, bottom: 60}
+        this.margins = {left: 160, right: 160, top: 50, bottom: 60}
 
         this.minYear = "2010"
         this.maxYear = "2022"
@@ -18,6 +18,7 @@ class BumpChart {
         this.svg = d3.select("#bump-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.drawAxis()
+        this.drawAxisLabel()
         this.drawSeries()
     }
 
@@ -66,23 +67,39 @@ class BumpChart {
         this.drawSeries()
     }
 
+    drawAxisLabel() {
+        let labels = this.svg.append("g").attr("id", "axis-labels")
+        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight - 10).attr("text-anchor", "middle")
+        labels.append("text").text("2022").attr("x", 829).attr("y", this.visHeight - 34.3).attr("font-size", 10.5)
+    }
+
     drawAxis() {
         let xSelection = this.svg.select("#x-axis")
-        let ySelection = this.svg.select("#y-axis")
-        
+        let ySelectionLeft = this.svg.select("#left-label")
+        let ySelectionRight = this.svg.select("#right-label")
+
         let xAxis = d3.axisBottom(this.scaleX)
-        ySelection.selectAll("text")
+
+        ySelectionLeft.selectAll("text")
             .data(this.left)
             .join("text")
-            .attr("x", 30)
+            .attr("x", 130)
             .transition()
             .attr("y", (d,i) => this.scaleY(d.ranking))
             .attr("transform", `translate(0, ${this.margins.bottom})`)
+            .attr("alignment-baseline", "middle")
+            .attr("text-anchor", "end")
             .text(d => d.genre)
 
-        let labels = this.svg.append("g").attr("id", "axis-labels")
-        labels.append("text").text("Year Released").attr("x", this.visWidth/2).attr("y", this.visHeight)
-        labels.append("text").text("Average Popularity").attr("x", this.visWidth/2).attr("y", 50)
+        ySelectionRight.selectAll("text")
+            .data(this.right)
+            .join("text")
+            .attr("x", 870)
+            .transition()
+            .attr("y", (d,i) => this.scaleY(d.ranking))
+            .attr("transform", `translate(0, ${this.margins.bottom})`)
+            .attr("alignment-baseline", "middle")
+            .text(d => d.genre)
 
         xSelection.attr("transform", `translate(0, ${this.visHeight - this.margins.top})`).call(xAxis)
     }
@@ -95,11 +112,15 @@ class BumpChart {
             .join("g")
             .attr("transform", `translate(0, ${this.margins.bottom })`)
 
-        seriesGroup.on("mouseover", function() {
-            console.log("hovered")
+        seriesGroup.on("mouseover", (e, d) => {
+            seriesGroup.filter(s => s !== d)
+                .transition()
+                .attr("opacity", 0.1)
             })
-        seriesGroup.on("mouseout", function() {
-            console.log("off")
+        seriesGroup.on("mouseout", (e, d) => {
+            seriesGroup.filter(s => s !== d)
+                .transition()  
+                .attr("opacity", 1)
             })
 
         this.drawLines(seriesGroup)
@@ -113,6 +134,7 @@ class BumpChart {
             .attr('cx', d => this.scaleX(new Date(d.year)))
             .attr('r', 15)
             .attr('fill', d => this.colorScale(d.genre))
+            .transition()
             .attr('cy', d => this.scaleY(d.ranking))
 
         let text = selection.selectAll('text')  
@@ -120,6 +142,7 @@ class BumpChart {
             .join('text')
             .text(d => d.ranking + 1)
             .attr('dx', d => this.scaleX(new Date(d.year)))
+            .transition()
             .attr('dy', d => this.scaleY(d.ranking))
             .attr('text-anchor', 'middle')
             .attr('alignment-baseline', 'middle')
@@ -133,9 +156,10 @@ class BumpChart {
         selection.selectAll("path")
             .data(d=>{ return [d[1]] })
             .join("path")
+            .transition()
             .attr("d", d => { return lineGenerator(d)})
             .attr("fill", "none")
             .attr("stroke", d => this.colorScale(d[0].genre))
-            .attr("stroke-width", 10)
+            .attr("stroke-width", 8)
     }
 }
