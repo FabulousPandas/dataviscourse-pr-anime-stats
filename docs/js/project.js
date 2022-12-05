@@ -50,7 +50,7 @@ loadData().then((loadedData => {
     create_checkboxes(globalApplicationState.demographics, lineChart, barGraph)
 }))
 
-function create_checkboxes(data, lineChart, barGraph) {
+function create_checkboxes(data, lineChart, barGraph, bumpChart) {
     let div = d3.select("#filters")
                 .append("g")
                 .selectAll("input")
@@ -81,6 +81,7 @@ function create_checkboxes(data, lineChart, barGraph) {
             updateColors()
             lineChart.update()
             barGraph.draw()
+            bumpChart.update()
         });
     label.append("span").classed("slider round", true)
     div.append("label").classed("slider-label", true).text((d) => d);

@@ -20,7 +20,7 @@ class LineChart {
         this.maxYear = "2022"
 
         this.scaleX = d3.scaleTime().domain([new Date(this.minYear), new Date(this.maxYear)]).range([this.margins.left, this.visWidth - this.margins.right])
-        this.scaleY = d3.scaleLinear().domain([0, yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
+        this.scaleY = d3.scaleLinear().domain([0, this.yMax]).range([this.visHeight - this.margins.bottom - this.margins.top, this.margins.bottom]).nice()
         this.svg = d3.select("#line-chart").attr("width", this.visWidth).attr("height", this.visHeight)
 
         this.updateFilteredData()
