@@ -105,11 +105,15 @@ class BumpChart {
             .join("g")
             .attr("transform", `translate(0, ${this.margins.bottom })`)
 
-        seriesGroup.on("mouseover", function() {
-            console.log("hovered")
+        seriesGroup.on("mouseover", (e, d) => {
+            seriesGroup.filter(s => s !== d)
+                .transition()
+                .attr("opacity", 0.1)
             })
-        seriesGroup.on("mouseout", function() {
-            console.log("off")
+        seriesGroup.on("mouseout", (e, d) => {
+            seriesGroup.filter(s => s !== d)
+                .transition()  
+                .attr("opacity", 1)
             })
 
         this.drawLines(seriesGroup)
