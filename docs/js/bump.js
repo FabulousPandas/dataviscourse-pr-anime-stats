@@ -95,13 +95,26 @@ class BumpChart {
             .join("g")
             .attr("transform", `translate(0, ${this.margins.bottom })`)
 
-        let circ = circGroup.selectAll('circle')
-        .data(d=>d[1])
-        .join('circle')
+        seriesGroup.on("mouseover", function() {
+            console.log("hovered")
+            })
+        seriesGroup.on("mouseout", function() {
+            console.log("off")
+            })
+
+        this.drawLines(seriesGroup)
+        this.drawCircles(seriesGroup)
+    }
+
+    drawCircles(selection) {
+        let circ = selection.selectAll('circle')
+            .data(d => {return d[1]})
+            .join('circle')
             .attr('cx', d => this.scaleX(new Date(d.year)))
             .attr('r', 15)
             .attr('fill', d => this.colorScale(d.genre))
             .attr('cy', d => this.scaleY(d.ranking))
+
         let text = selection.selectAll('text')  
             .data(d=>d[1])
             .join('text')
