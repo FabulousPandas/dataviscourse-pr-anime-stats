@@ -7,13 +7,6 @@ class BumpChart {
 
         this.margins = {left: 110, right: 20, top: 50, bottom: 40}
 
-        this.years = Array.from(this.globalApplicationState.seasonData.keys())
-        this.years.sort()
-        let yMax = d3.max(this.years, d => {
-            let data = this.globalApplicationState.seasonData.get(d)
-            return d3.max(Object.values(data.genre_counts))
-        })
-
         this.minYear = "2010"
         this.maxYear = "2022"
 
@@ -60,6 +53,8 @@ class BumpChart {
                 ranking: i
             }))
         })
+        this.left = rankings.filter(d => d.year === this.minYear)
+        this.right = rankings.filter(d => d.year === this.maxYear)
         this.chartData = rankings
     }
 
