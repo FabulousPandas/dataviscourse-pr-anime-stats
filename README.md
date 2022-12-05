@@ -23,4 +23,4 @@ will change all 3 charts and all of the charts have matching color codes.
 Known Problems:
 Our bump chart doesn't write out the year 2022 at the end of the x-axis however data still shows up for that year above it.
 
-Project Screen-Cast Video Link: https://youtu.be/P4xj0_taAZE
+Project Screen-Cast Video: https://youtu.be/P4xj0_taAZE
