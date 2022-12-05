@@ -5,7 +5,11 @@ async function loadData() {
     return [seasonData, genreData]
 }
 
-const selected = ["Action", "Comedy", "Drama", "Romance"];
+let selected = ["Action", "Comedy", "Drama", "Romance"];
+    
+let story = false;
+
+let lineChart, barGraph, bumpChart;
 
 // Data used throughout our application
 const globalApplicationState =  {
@@ -36,21 +40,25 @@ loadData().then((loadedData => {
     globalApplicationState.genreData = new Map(genreData)
     updateColors();
 
-    let lineChart = new LineChart(globalApplicationState)
-    let barGraph = new BarGraph(globalApplicationState)
-    let bumpChart = new BumpChart(globalApplicationState)
+    story = false;
+
+    lineChart = new LineChart(globalApplicationState)
+    barGraph = new BarGraph(globalApplicationState)
+    bumpChart = new BumpChart(globalApplicationState)
+
+    d3.select("#story-button").on("click", show_story)
 
     d3.select("#filters") .append("text").text("Genres:")
-    create_checkboxes(globalApplicationState.genres, lineChart, barGraph, bumpChart)
+    create_checkboxes(globalApplicationState.genres)
 
     d3.select("#filters").append("text").text("Themes:")
-    create_checkboxes(globalApplicationState.themes, lineChart, barGraph, bumpChart)
+    create_checkboxes(globalApplicationState.themes)
 
     d3.select("#filters") .append("text").text("Demographics:")
-    create_checkboxes(globalApplicationState.demographics, lineChart, barGraph, bumpChart)
+    create_checkboxes(globalApplicationState.demographics)
 }))
 
-function create_checkboxes(data, lineChart, barGraph, bumpChart) {
+function create_checkboxes(data) {
     let div = d3.select("#filters")
                 .append("g")
                 .selectAll("input")
@@ -78,10 +86,7 @@ function create_checkboxes(data, lineChart, barGraph, bumpChart) {
                 d3.selectAll(".unchecked").property("disabled", true);
             else
                 d3.selectAll(".unchecked").property("disabled", false);
-            updateColors()
-            lineChart.update()
-            barGraph.draw()
-            bumpChart.update()
+            updateAll();
         });
     label.append("span").classed("slider round", true)
     div.append("label").classed("slider-label", true).text((d) => d);
@@ -90,6 +95,13 @@ function create_checkboxes(data, lineChart, barGraph, bumpChart) {
 function updateColors() {
     globalApplicationState.colorScale = d3.scaleOrdinal().domain(selected).range(d3.schemeCategory10);
     drawLegend();
+}
+
+function updateAll() {
+    updateColors()
+    lineChart.update()
+    barGraph.draw()
+    bumpChart.update()
 }
 
 function drawLegend() {
@@ -109,4 +121,23 @@ function drawLegend() {
         .attr("x", (d,i) => 30 + (i % 5) * 150)
         .attr("y", (d, i) => i < 5 ? 15 : 40)
         .text(d => d)
+}
+
+function show_story() {
+    story = !story;
+    if (story) {
+        d3.select("#filters").selectAll("input").property("disabled", true);
+        selected = globalApplicationState.selectedGenres;
+        globalApplicationState.selectedGenres = ["Slice of Life", "Action", "Drama", "Mahou Shoujo", "Psychological"]
+        updateAll();
+        d3.select("#story-text").append("text").text("One interesting thing to note is the recent rise of Slice of Life anime. Despite that, the amount of Slice of Life anime being made has gone down recently.")
+    } else {
+        d3.select("#filters").selectAll("input").property("disabled", false);
+        if (globalApplicationState.selectedGenres.length >= 10) {
+            d3.selectAll(".unchecked").property("disabled", true);
+        }
+        globalApplicationState.selectedGenres = selected;
+        updateAll();
+        d3.select("#story-text").selectAll("text").remove();
+    }
 }

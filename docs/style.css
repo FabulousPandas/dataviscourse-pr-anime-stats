@@ -56,6 +56,10 @@
     top: 10px;
 }
 
+#story-text {
+    background-color: white;
+}
+
 .slider-label {
     position: relative;
     top: 4px;
